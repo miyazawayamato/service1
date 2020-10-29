@@ -18,7 +18,6 @@ use App\Http\Controllers\ArticleController;//記事のコントローラー
 |
 */
 
-//Route::get('/list','App\Http\Controllers\ListController@ListShow');
 
 // Route::get('/', function () {
 //     return view('welcome');

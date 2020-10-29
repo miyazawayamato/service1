@@ -1,0 +1,15 @@
+.main {
+    display: flex;
+    width: 88%;
+    margin: 0 auto;
+}
+
+.left {
+    flex: 3;
+    background-color: whitesmoke;
+}
+
+.right {
+    flex: 1;
+    background-color: yellow;
+}

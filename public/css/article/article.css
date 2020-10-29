@@ -1,0 +1,22 @@
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 88%;
+  margin: 0 auto;
+}
+
+.left {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  background-color: whitesmoke;
+}
+
+.right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: yellow;
+}
+/*# sourceMappingURL=article.css.map */

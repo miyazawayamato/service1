@@ -1,12 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <p>記事一覧</p>
-</body>
-</html>
+@extends('common.main')
+@section('title', '記事一覧')
+@section('stylesheet')
+  <link rel="stylesheet" href="{{ asset('css/article/article.css') }}"/>
+@endsection
+
+@section('main')
+    <div class="main">
+        <div class="left">
+            <p>こんにちは</p>
+            <div class="container">
+                <dl>
+                    @foreach ($articles as $article)
+                        <dt>{{$article->tittle}}</dt>
+                        <dl>{{$article->class}}</dl>
+                    @endforeach
+                </dl>
+            </div>
+        </div>
+        
+        <div class="right">
+            <p>右</p>
+        </div>
+    </div>
+@endsection

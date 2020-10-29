@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>記事のホームです</title>
-</head>
-<body>
-    <a href="{{route('board')}}">掲示板（board）</a>
-    <a href="{{route('article')}}">記事（article）</a>
-</body>
-</html>
+@extends('common.main')
+@section('title', 'ホーム')
+{{-- @section('stylesheet')
+  <link rel="stylesheet" href="css/toiawase.css"/>
+@endsection --}}
+@section('main')
+    <div class="main">
+        <h1>これはメニューです</h1>
+        <a href="{{route('board')}}">掲示板（board）</a>
+        <a href="{{route('article')}}">記事（article）</a>
+    </div>
+@endsection
