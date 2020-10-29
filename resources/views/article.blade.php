@@ -12,7 +12,7 @@
                 <dl>
                     @foreach ($articles as $article)
                         <dt>{{$article->tittle}}</dt>
-                        <dl>{{$article->class}}</dl>
+                        <dd>{{$article->class}}</dd>
                     @endforeach
                 </dl>
             </div>
