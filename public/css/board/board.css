@@ -1,0 +1,41 @@
+section {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  margin: 10px 6em 20px 2em;
+  padding: 0.5em 0.5em 1em 0;
+}
+
+.link {
+  text-align: right;
+}
+
+.comment-top {
+  margin-bottom: 0.8em;
+}
+
+.comment-info {
+  text-align: right;
+  opacity: 0.5;
+}
+
+.name {
+  margin: 0 2em;
+}
+
+.comment-main {
+  margin-bottom: 0.8em;
+}
+
+.comment-main p {
+  line-height: 1.6;
+  letter-spacing: 0.7px;
+}
+
+.comment-under {
+  text-align: right;
+}
+
+.comment-under span {
+  border: 1px solid;
+}
+/*# sourceMappingURL=board.css.map */

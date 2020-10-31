@@ -30,7 +30,7 @@ footer,header,hgroup,menu,nav,section {
     display:block;
 }
 
-nav ul {
+nav ul, ul li {
     list-style:none;
 }
 
@@ -130,4 +130,21 @@ header h1 {
             // ホバーで濃くする
         }
     }
+}
+
+.main {
+    display: flex;
+    width: 88%;
+    margin: 0 auto;
+}
+
+.left {
+    flex: 3;
+    background-color: whitesmoke;
+    // height: 1000px;
+}
+
+.right {
+    flex: 1;
+    background-color: yellow;
 }

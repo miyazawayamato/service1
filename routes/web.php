@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;//ホームコントローラー
 use App\Http\Controllers\BoardController;//ボードコントローラー
 use App\Http\Controllers\ArticleController;//記事のコントローラー
+use App\Http\Controllers\QualificationController;//資格一覧のコントローラー
 
 
 /*
@@ -20,7 +21,7 @@ use App\Http\Controllers\ArticleController;//記事のコントローラー
 
 
 // Route::get('/', function () {
-//     return view('welcome');
+//     return view('trial');
 // });
 
 //ホーム
@@ -32,6 +33,11 @@ Route::get('/board',[BoardController::class, 'show'])->name('board');
 //投稿記事
 Route::get('/article',[ArticleController::class, 'show'])->name('article');
 
-// Route::get('/board',[BoardController::class, 'show'])->name('board');
+//資格一覧
+Route::get('/qualifications',[QualificationController::class, 'show'])->name('qualis');
+
+//資格個別
+Route::get('/qualification',[QualificationController::class,
+'Individual'])->name('quali');
 
 

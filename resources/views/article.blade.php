@@ -5,21 +5,21 @@
 @endsection
 
 @section('main')
-    <div class="main">
-        <div class="left">
-            <p>こんにちは</p>
-            <div class="container">
-                <dl>
-                    @foreach ($articles as $article)
+    <div class="container">
+        <dl>
+            @foreach ($articles as $article)
+            <div class="articles">
+                <a href="#">
+                    <div class="article">
                         <dt>{{$article->tittle}}</dt>
                         <dd>{{$article->class}}</dd>
-                    @endforeach
-                </dl>
+                    </div>
+                </a>
             </div>
-        </div>
-        
-        <div class="right">
-            <p>右</p>
-        </div>
+            @endforeach
+        </dl>
+    </div>
+    <div class="link">
+        {{ $articles->links('vendor.pagination.semantic-ui') }}
     </div>
 @endsection

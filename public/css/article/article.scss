@@ -1,23 +1,37 @@
-.main {
-    display: flex;
-    width: 88%;
-    margin: 0 auto;
+.container {
+    padding-top: 30px;
 }
 
-.left {
-    flex: 3;
-    background-color: whitesmoke;
-    dl {
-        display: grid;
-        grid-template-rows: calc(100%/3) calc(100%/3) calc(100%/3);
-        grid-template-columns: calc(100%/3) calc(100%/3) calc(100%/3);
-        dt {
-            color: yellowgreen;
+dl {
+    display: flex;
+    flex-wrap: wrap;
+    .articles {
+        width : calc(100% / 3);
+        a {
+            display: block;
+            margin-right: 10px;
         }
     }
 }
 
-.right {
-    flex: 1;
-    background-color: yellow;
+.article {
+    border: 1px solid;
+    height: 300px;
+    margin-bottom: 150px;
+    // はみ出した文字を隠す
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    dt {
+        color: yellowgreen;
+        font-size: 25px;
+        text-align: center;
+        padding-bottom: 50px;
+        border-bottom: 1px solid;
+    }
+}
+
+.link {
+    font-size: 25px;
+    text-align: right;
 }

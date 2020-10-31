@@ -10,7 +10,11 @@ class ArticleController extends Controller
     //
     public function show() {
         //全部取得
-        $articles = Article::all();
+        // $articles = Article::all();
+        
+        $articles = Article::Paginate(9);
+        // $articles = Article::orderBy('id', 'desc')->Paginate(9);
+        
         
         return view('article',compact('articles'));
     }
