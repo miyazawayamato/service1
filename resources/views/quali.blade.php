@@ -1,12 +1,12 @@
 @extends('common.main')
 @section('title', '資格一覧')
-{{-- @section('stylesheet')
-  <link rel="stylesheet" href="css/toiawase.css"/>
-@endsection --}}
+@section('stylesheet')
+  <link rel="stylesheet" href="css/quali/quali.css"/>
+@endsection
 
 @section('main')
     <h2>書士書士</h2>
-    <p>ここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入ります</p>
+    <p class="explanation">ここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入ります</p>
     <dl>
         <dt>受験日</dt>
         <dd>10月中旬ごろ</dd>
@@ -19,6 +19,7 @@
         <dt>資格区分</dt>
         <dd>民間</dd>
     </dl>
-    <p><a href="#">体験談へ</a></p>
-    <p><a href="#">掲示板へ</a></p>
+    <p><a href="{{route('board')}}">掲示板へ</a></p>
+    <p><a href="{{route('experience')}}">体験談へ</a></p>
+    <p><a href="{{route('postform')}}">投稿する</a></p>
 @endsection

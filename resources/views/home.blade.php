@@ -9,5 +9,6 @@
         <h2>ここにいろいろ追加予定です</h2>
         <a href="{{route('board')}}">掲示板（board）</a>
         <a href="{{route('article')}}">記事（article）</a>
+        <a href="{{route('experience')}}">体験</a>
     </div>
 @endsection

@@ -1,0 +1,49 @@
+h3 {
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
+.report {
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+    background-color: white;
+    span {
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+}
+
+.type {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.contributor {
+    display: flex;
+    margin-bottom: 10px;
+    dt {
+        margin-right: 10px;
+    }
+}
+
+dl {
+    margin-bottom: 20px;
+    border: 1px solid;
+    width: 50%;
+    dt {
+        margin-bottom: 5px;
+        border-bottom: 1px solid;
+    }
+}
+
+.report-main {
+    margin-top: 10px;
+    h4 {
+        margin-bottom: 15px;
+    }
+    p {
+        letter-spacing: 5px;
+        line-height: 30px;
+    }
+}

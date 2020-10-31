@@ -15,4 +15,9 @@ class BoardController extends Controller
         
         return view('board',compact('comments'));
     }
+    
+    public function add() {
+        //追加処理
+        return('tata');
+    }
 }

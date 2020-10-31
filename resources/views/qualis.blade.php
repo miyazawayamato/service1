@@ -6,4 +6,5 @@
 
 @section('main')
     <p>資格一覧です</p>
+    <a href="{{route('quali')}}">個別資格へ</a>
 @endsection

@@ -118,9 +118,10 @@ header h1 {
 
 .headnavi {
     display: flex;
+    flex-wrap: wrap;
     li {
         width: 160px;
-        font-size: 25px;
+        font-size: 1.5em;
         text-align: center;
         a{
             color: whitesmoke;
@@ -146,5 +147,22 @@ header h1 {
 
 .right {
     flex: 1;
-    background-color: yellow;
+    background-color: #CEFE20;
+}
+
+.main-menu {
+    height: 40px;
+    border: 1px solid;
+    display: flex;
+    margin-bottom: 30px;
+    a {
+        border: 1px solid black;
+        width: 50%;
+        text-align: center;
+        text-decoration: none;
+        font-size: 25px;
+        padding-top: 8px;
+        background-color: #32CBC8;
+        color: white;
+    }
 }

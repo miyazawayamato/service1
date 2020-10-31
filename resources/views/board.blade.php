@@ -5,11 +5,27 @@
 @endsection
 
 @section('main')
+    <div class="main-menu">
+      <a href="{{route('experience')}}">体験談</a>
+      <a href="{{route('board')}}">掲示板</a>
+    </div>
     <div class="article-top">
-      
+      <p>投稿フォーム</p>
+      <form action="{{route('boardadd')}}" method="post">
+        <div class="nickname">
+          <span>ニックネーム</span>
+          <input type="text" name="name">
+        </div>
+        <div class="form-text">
+          <span>投稿内容</span>
+          <textarea name="message"></textarea>
+        </div>
+        <div class="btn">
+          <button type="submit">投稿</button>
+        </div>
+      </form>
     </div>
     <div class="article-main">
-      
       <div class="article">
         <div class="link">
           {{ $comments->links('vendor.pagination.semantic-ui') }}

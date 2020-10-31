@@ -12,7 +12,7 @@
     <header>
         <div class="header-main">
             <div class="header-logo">
-                <h1>これはロゴ</h1>
+                <h1><a href="{{route('home')}}">ここはロゴ</a></h1>
             </div>
             <div class="header-nav">
                 <nav>
@@ -21,7 +21,6 @@
                         <li><a href="#">体験談</a></li>
                         <li><a href="{{route('board')}}">掲示板</a></li>
                         <li><a href="{{route('article')}}">コラム</a></li>
-                        <li><a href="#">お問い合わせ</a></li>
                     </ul>
                 </nav>
             </div>

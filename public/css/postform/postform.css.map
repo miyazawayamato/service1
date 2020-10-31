@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,IAAI;CACnB;;AAED,AAAA,IAAI,CAAC;EACD,aAAa,EAAE,IAAI;CAItB;;AALD,AAEI,IAFA,CAEA,CAAC,CAAC;EACE,aAAa,EAAE,IAAI;CACtB",
+    "sources": [
+        "postform.scss"
+    ],
+    "names": [],
+    "file": "postform.css"
+}
