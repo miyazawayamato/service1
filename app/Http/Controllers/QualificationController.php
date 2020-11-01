@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Qualification;
 
 class QualificationController extends Controller
 {
@@ -10,8 +11,13 @@ class QualificationController extends Controller
     public function show() {
         return view('qualis');
     }
-    //
-    public function Individual() {
-        return view('quali');
+    //個別表示
+    public function Individual($id) {
+        
+        $quali = Qualification::find($id);
+        
+        // return view('quali', compact('quali'));
+        return view('quali', ['quali' => $quali, 'id' => $id]);
+        
     }
 }

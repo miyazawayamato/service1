@@ -1,11 +1,11 @@
 @extends('common.main')
 @section('title', '資格一覧')
 @section('stylesheet')
-  <link rel="stylesheet" href="css/quali/quali.css"/>
+  <link rel="stylesheet" href="{{ asset('css/quali/quali.css') }}"/>
 @endsection
 
 @section('main')
-    <h2>書士書士</h2>
+    <h2>{{ $quali->certificate }}</h2>
     <p class="explanation">ここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入ります</p>
     <dl>
         <dt>受験日</dt>
@@ -19,7 +19,7 @@
         <dt>資格区分</dt>
         <dd>民間</dd>
     </dl>
-    <p><a href="{{route('board')}}">掲示板へ</a></p>
-    <p><a href="{{route('experience')}}">体験談へ</a></p>
     <p><a href="{{route('postform')}}">投稿する</a></p>
+    <p><a href="{{route('board', $id)}}">掲示板へ</a></p>
+    <p><a href="{{route('experiences', $id)}}">体験談一覧へ</a></p>
 @endsection

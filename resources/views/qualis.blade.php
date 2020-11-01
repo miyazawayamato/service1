@@ -6,5 +6,7 @@
 
 @section('main')
     <p>資格一覧です</p>
-    <a href="{{route('quali')}}">個別資格へ</a>
+    <a href="{{ route('quali', ['id' => 1])}}">司法書士へ</a>
+    <a href="{{ route('quali', ['id' => 2])}}">行政書士へ</a>
+    <a href="{{ route('quali', ['id' => 3])}}">税理士へ</a>
 @endsection

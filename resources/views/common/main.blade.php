@@ -18,8 +18,10 @@
                 <nav>
                     <ul class="headnavi">
                         <li><a href="{{route('qualis')}}">資格一覧</a></li>
-                        <li><a href="#">体験談</a></li>
-                        <li><a href="{{route('board')}}">掲示板</a></li>
+                        {{-- 一覧にする --}}
+                        {{-- <li><a href="#">体験談</a></li> --}}
+                        {{-- <li><a href="{{route('board')}}">掲示板</a></li> --}}
+                        <li><a href="{{route('postform')}}">投稿する</a></li>
                         <li><a href="{{route('article')}}">コラム</a></li>
                     </ul>
                 </nav>

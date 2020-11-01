@@ -5,10 +5,6 @@
 @endsection
 
 @section('main')
-    <div class="main-menu">
-        <a href="{{route('experience')}}">体験談</a>
-        <a href="{{route('board')}}">掲示板</a>
-    </div>
     <h3>経験レポート</h3>
     <div class="report">
         <p class="type">資格書士</p>
