@@ -3,21 +3,47 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\SihousyosiTable;
+use App\Models\GyouseisyosiTable;
 
 class ExperienceController extends Controller
 {
-    //
-    public function show() {
-        return view('experience');
+    //一覧表示
+    public function showList($id) {
+        
+        switch ($id) {
+            case 1:
+                $exps = SihousyosiTable::all();
+            break;
+            case 2: 
+                $exps = GyouseisyosiTable::all();
+            break;
+            case 3: 
+                return($id);
+            break;
+            default: 
+            return('失敗しました');
+        }
+        return view('experiences', ['id' => $id, 'exps' => $exps]);
     }
     
-    public function showList($id) {
-        //swithcになおした方がよさそう
-        if ($id == 1) {
-            //テーブル選択まだ
-            return view('experiences', ['id' => $id]);
-        } else {
-            return($id);
+    //上下別のコントローラーがいい？
+    
+    //個別
+    public function show($id, $qualiexp_id) {
+        switch ($id) {
+            case 1:
+                $texts = SihousyosiTable::find($qualiexp_id);
+            break;
+            case 2: 
+                $texts = GyouseisyosiTable::find($qualiexp_id);
+            break;
+            case 3: 
+                return($qualiexp_id);
+            break;
+            default: 
+            return('失敗しました');
         }
+        return view('experience',['texts' => $texts]);
     }
 }

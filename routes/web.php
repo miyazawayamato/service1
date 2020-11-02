@@ -43,13 +43,18 @@ Route::get('/qualification/{id}',[QualificationController::class,'Individual'])-
 //体験談一覧
 Route::get('/experiences/{id}',[ExperienceController::class, 'showList'])->name('experiences');
 
-//体験談
-Route::get('/experience',[ExperienceController::class, 'show'])->name('experience');
+//体験談個別
+Route::get('/experience/{id}/{qualiexp_id}',[ExperienceController::class, 'show'])->name('experience');
 
-//体験談投稿
+//体験談投稿ページ
 Route::get('/postform',[PostformController::class, 'postform'])->name('postform');
+//体験談投稿する
+Route::post('/postform',[PostformController::class, 'posting'])->name('postform');
 
 //投稿記事
 Route::get('/article',[ArticleController::class, 'show'])->name('article');
 
-
+//認証機能？
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

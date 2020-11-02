@@ -20,6 +20,6 @@
         <dd>民間</dd>
     </dl>
     <p><a href="{{route('postform')}}">投稿する</a></p>
-    <p><a href="{{route('board', $id)}}">掲示板へ</a></p>
-    <p><a href="{{route('experiences', $id)}}">体験談一覧へ</a></p>
+    <p><a href="{{route('board', [$id])}}">掲示板へ</a></p>
+    <p><a href="{{route('experiences', [$id])}}">体験談一覧へ</a></p>
 @endsection

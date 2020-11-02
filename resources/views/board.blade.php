@@ -6,15 +6,15 @@
 
 @section('main')
     <div class="main-menu">
-      <a href="{{route('experiences', $id)}}">体験談一覧</a>
+      <a href="{{route('experiences', [$id])}}">体験談一覧</a>
       <a href="#">掲示板へ</a>
     </div>
     <h2>掲示板</h2>
     <div class="article-top">
       <p>投稿フォーム</p>
-      {{-- 投稿フォームにidを持たせる --}}
       <form action="{{route('boardadd')}}" method="post">
       @csrf
+      <input type="hidden" name="id" value="{{$id}}">
         <div class="nickname">
           <span>ニックネーム</span>
           <input type="text" name="name">
