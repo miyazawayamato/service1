@@ -50,6 +50,7 @@ a {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    text-decoration: none;
 }
 
 /* change colours to suit your needs */
@@ -95,64 +96,111 @@ input, select {
     vertical-align:middle;
 }
 
-header {
-    padding-top: 30px;
-    padding-bottom: 20px;
-    background-color: #CAE65E;
-    margin-bottom: 45px;
-}
+//ここから記述
 
 .header-main {
-    display: flex;
-    width: 88%;
+    padding-top: 20px;
+    width: 83%;
     margin: 0 auto;
+    text-align: center;
 }
-
-header h1 {
-    font-size: 35px;
+.header-top {
+    margin-bottom: 30px;
 }
-
-.header-nav {
-    padding-left: 30px;
+.header-logo {
+    font-size: 40px;
+    color: #32CBC8;
+    text-decoration: none;
+}
+.login {
+    display: block;
+    text-align: right;
 }
 
 .headnavi {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     li {
-        width: 160px;
+        width: 20%;
         font-size: 1.5em;
         text-align: center;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+        letter-spacing: 1px;
         a{
-            color: whitesmoke;
+            color: black;
+            padding: 10px 0;
             opacity: 0.8;
             text-decoration: none;
             display: block;
+            cursor: pointer;
             // ホバーで濃くする
         }
     }
 }
 
-.main {
-    display: flex;
-    width: 88%;
-    margin: 0 auto;
+.headnavi li a:hover {
+    background-color: whitesmoke;
+    font-weight: bold;
 }
 
-.left {
-    flex: 3;
+.transe {
+    height: 20px;
+    background-color: #CAE65C;
+}
+
+.main-back {
     background-color: whitesmoke;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.main {
+    margin: 0 auto;
+    width: 88%;
+    display: flex;
+    background-color: white;
+}
+.left {
+    flex: 3.5;
+    padding: 0 20px;
     // height: 1000px;
 }
-
 .right {
     flex: 1;
-    background-color: #CEFE20;
+    border: 1px solid;
 }
 
-.main-menu {
+footer {
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+.foot {
+    padding-top: 35px;
+}
+
+.foot-logo {
+    font-size: 30px;
+    color: #32CBC8;
+}
+
+.foot-form {
+    display: inline-block;
+    color: black;
+    margin-top: 15px;
+}
+
+.copyright {
+    margin-top: 30px;
+    padding: 20px 0;
+    border-top: 1px solid;
+    opacity: 0.5;
+}
+//掲示板と体験談切り替えメニュー
+.switch-menu {
     height: 40px;
-    border: 1px solid;
+    // border: 1px solid;
     display: flex;
     margin-bottom: 30px;
     a {
@@ -163,6 +211,29 @@ header h1 {
         font-size: 25px;
         padding-top: 8px;
         background-color: #32CBC8;
-        color: white;
+        color: black;
     }
+}
+
+.switch {
+    opacity: 0.5;
+    background-color: rgba(50, 203, 200, 0.5);
+}
+
+.switch:hover {
+    font-weight: bold;
+    background-color: #CAE65C;
+}
+
+
+
+
+//タブレット
+@media screen and (max-width:780px){
+    
+}
+
+//スマートフォン
+@media screen and (max-width:480px){
+    
 }

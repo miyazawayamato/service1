@@ -1,4 +1,54 @@
-.login {
-    margin-top: 20px;
-    font-weight: bold;
+h2 {
+  font-size: 40px;
+  text-align: center;
+  padding: 10px 0;
 }
+
+.boxs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.home-box {
+  width: 32.5%;
+  margin-bottom: 20px;
+}
+
+.box {
+  margin: 5px;
+  border: 1px solid #CAE65C;
+  padding: 10px 0 0 0;
+}
+
+.box h3 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 100;
+  color: black;
+}
+
+.box dl {
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.box dl dd, .box dl dt {
+  color: black;
+  text-decoration: underline;
+  margin-bottom: 3px;
+}
+
+.box:hover {
+  margin: 0;
+  background: rgba(240, 240, 240, 0.5);
+  font-weight: bold;
+  border: 5px solid #CAE65C;
+}
+
+.box:hover h3 {
+  font-weight: bold;
+}
+/*# sourceMappingURL=home.css.map */

@@ -1,0 +1,47 @@
+h2 {
+    font-size: 40px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.boxs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-box {
+    width: 32.5%;
+    // border: 1px solid;
+    margin-bottom: 20px;
+}
+
+.box {
+    margin: 5px;
+    border: 1px solid #CAE65C;
+    padding: 10px 0 0 0;
+    h3 {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 100;
+        color: black;
+    }
+    dl {
+        padding-left: 5px;
+        margin-bottom: 5px;
+        dd,dt {
+            color: black;
+            text-decoration: underline;
+            margin-bottom: 3px;
+        }
+    }
+}
+
+.box:hover {
+    margin: 0;
+    background: rgba(240,240,240,0.5);
+    font-weight: bold;
+    border: 5px solid #CAE65C;
+    h3 {
+        font-weight: bold;
+    }
+}

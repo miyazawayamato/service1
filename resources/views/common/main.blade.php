@@ -10,17 +10,29 @@
 </head>
 <body>
     <header>
+    <div class="transe"></div>
         <div class="header-main">
-            <div class="header-logo">
-                <h1><a href="{{route('home')}}">ここはロゴ</a></h1>
+            <div class="header-top">
+                <a href="{{route('home')}}"><h1 class="header-logo">ドクシカ</h1></a>
+                <span class="login">
+                    @if (Route::has('login'))
+                        @auth
+                            <a href="{{ url('/dashboard') }}" class="tetext-gray-700underline">Dashboard</a>
+                        @else
+                            <a href="{{ route('login') }}">ログイン/</a>
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}">新規登録</a>
+                            @endif
+                        @endif
+                    @endif
+                </span>
             </div>
             <div class="header-nav">
                 <nav>
                     <ul class="headnavi">
                         <li><a href="{{route('qualis')}}">資格一覧</a></li>
-                        {{-- 一覧にする --}}
-                        {{-- <li><a href="#">体験談</a></li> --}}
-                        {{-- <li><a href="{{route('board')}}">掲示板</a></li> --}}
+                        <li><a href="#">体験談一覧</a></li>
+                        <li><a href="#">掲示板一覧</a></li>
                         <li><a href="{{route('postform')}}">投稿する</a></li>
                         <li><a href="{{route('article')}}">コラム</a></li>
                     </ul>
@@ -28,19 +40,26 @@
             </div>
         </div>
     </header>
-    
-    <div class="main">
-        <div class="left">
-            @yield('main')
-        </div>
-        
-        <div class="right">
-            <p>右</p>
+    <div class="transe"></div>
+    <div class="main-back">
+        <div class="main">
+            <div class="left">
+                @yield('main')
+            </div>
+            
+            <div class="right">
+                <p>右</p>
+            </div>
         </div>
     </div>
     
     <footer>
-        
+        <div class="transe"></div>
+        <div class="foot">
+            <h3 class="foot-logo">ドクシカ</h3>
+            <a href="#" class="foot-form">お問い合わせフォーム</a>
+        </div>
+        <p class="copyright">Copyright(C) sample office. All Rights Reserved.</p>
     </footer>
 </body>
 </html>

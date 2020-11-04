@@ -34,6 +34,11 @@ Route::get('/board/{id}',[BoardController::class, 'show'])->name('board');
 //掲示板投稿
 Route::post('/boardadd',[BoardController::class, 'add'])->name('boardadd');
 
+//いいね機能
+Route::get('/reply/like/{id}', 'RepliesController@like')->name('reply.like');
+//言いを外す
+Route::get('/reply/unlike/{id}', 'RepliesController@unlike')->name('reply.unlike');
+
 //資格一覧
 Route::get('/qualifications',[QualificationController::class, 'show'])->name('qualis');
 

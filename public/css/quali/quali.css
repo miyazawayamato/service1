@@ -1,6 +1,13 @@
-h2 {
-  font-size: 40px;
-  margin: 20px 0 30px 0;
+.quali-top {
+  margin: 20px 0 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+}
+
+.shikaku {
+  font-size: 45px;
 }
 
 .explanation {
@@ -10,16 +17,23 @@ h2 {
   padding-right: 4em;
 }
 
-dl {
-  margin-bottom: 10px;
+table {
+  display: block;
+  margin: 0 0 0 auto;
 }
 
-dl dt {
-  text-decoration: underline;
-  margin-bottom: 5px;
+tr {
+  border: 1px solid;
+  height: 25px;
 }
 
-dl dd {
-  text-decoration: underline;
+tr th {
+  border: 1px solid;
+  padding: 2px;
+}
+
+tr td {
+  border: 1px solid;
+  padding: 2px;
 }
 /*# sourceMappingURL=quali.css.map */

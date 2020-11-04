@@ -1,0 +1,52 @@
+h2 {
+    font-size: 40px;
+    color: #40A6A4;
+    padding: 10px 0;
+    border-bottom: 2px solid #CAE65C;
+}
+  
+h3 {
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.qualis-main {
+    padding-top: 20px;
+    font-size: 20px;
+}
+.qualis-menu {
+    li {
+        width: 100%;
+    }
+}
+.quali-box {
+    border-bottom: 1px solid;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    a:hover {
+        background: rgba(240,240,240,0.5);
+        // background-color: whitesmoke;
+        color: #CAE65C;
+    }
+}
+.quali {
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    width: 20%;
+}
+
+.board-root, .exp-root, .post-roof{
+    padding: 5px 10px;
+    border-left: 2px dashed;
+    color: black;
+    display: inline-block;
+    // border-bottom-left-radius: 2px;
+}
+
+
+.post-roof {
+    border-right: 2px solid;
+}
