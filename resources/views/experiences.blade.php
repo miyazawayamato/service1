@@ -20,7 +20,13 @@
             </tr>
         </table>
     </div>
-    <p class="explanation">ここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入ります</p>
+    <div class="accordion">
+        <input id="acd-check1" class="acd-check" type="checkbox">
+        <label class="acd-label" for="acd-check1">詳しい情報</label>
+        <div class="acd-content">
+            <p>ここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入ります</p>
+        </div>
+    </div>
     <div class="switch-menu">
         <a href="#" >体験談一覧</a>
         <a class="switch" href="{{route('board', [$id])}}">掲示板</a>
@@ -31,7 +37,7 @@
         <p><a href="{{route('experience', ['id' => $id, 'qualiexp_id' =>$exp->qualiexp_id])}}">体験談へ</a></p>
         <dl>
             <dt>{{$exp->name}}</dt>
-            <dd>{{$exp->created_at}}</dd>
+            <dd>{{$exp->created_at->format('Y/m/d')}}</dd>
             <dd>{{$exp->body}}</dd>
         </dl>
     </div>

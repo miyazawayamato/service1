@@ -15,14 +15,19 @@
         <th>資格区分</th>
       </tr>
       <tr>
-        <td>10月中旬ごろ</td>
+        <td>10月中旬</td>
         <td>10%前後(約2000人)</td>
         <td>民間</td>
       </tr>
     </table>
   </div>
-  <p class="explanation">ここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入ります</p>
-  
+  <div class="accordion">
+    <input id="acd-check1" class="acd-check" type="checkbox">
+    <label class="acd-label" for="acd-check1">詳しい情報</label>
+      <div class="acd-content">
+        <p>ここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入ります</p>
+      </div>
+  </div>  
   <div class="switch-menu">
     <a href="{{route('experiences', [$id])}}" class="switch" >体験談一覧</a>
     <a href="#">掲示板へ</a>

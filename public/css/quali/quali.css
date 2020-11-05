@@ -3,18 +3,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 50px;
 }
 
 .shikaku {
-  font-size: 45px;
-}
-
-.explanation {
-  margin: 0 0 20px 0;
-  letter-spacing: 2px;
-  line-height: 20px;
-  padding-right: 4em;
+  font-size: 40px;
+  height: 100%;
+  width: 50%;
 }
 
 table {
@@ -24,7 +18,7 @@ table {
 
 tr {
   border: 1px solid;
-  height: 25px;
+  height: 100%;
 }
 
 tr th {
@@ -35,5 +29,49 @@ tr th {
 tr td {
   border: 1px solid;
   padding: 2px;
+}
+
+.accordion {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.acd-check {
+  display: none;
+}
+
+.acd-label {
+  color: #32CBC8;
+  display: inline-block;
+  background-color: whitesmoke;
+  padding: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.acd-content {
+  height: 0;
+  opacity: 0;
+  padding: 0 10px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  visibility: hidden;
+  letter-spacing: 2px;
+  line-height: 20px;
+}
+
+.acd-check:checked + .acd-label + .acd-content {
+  height: 100%;
+  opacity: 1;
+  padding: 10px;
+  visibility: visible;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 780px) {
+  .shikaku {
+    font-size: 25px;
+  }
 }
 /*# sourceMappingURL=quali.css.map */

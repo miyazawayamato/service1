@@ -48,7 +48,49 @@
             </div>
             
             <div class="right">
-                <p>右</p>
+                <div class="rank">
+                    <h3>ランキング</h3>
+                    <div class="ranking">
+                        <ul>
+                            <li>
+                                <a href="">資格資格</a>
+                            </li>
+                            <li>
+                                <a href="">資格資格</a>
+                            </li>
+                            <li>
+                                <a href="">資格資格</a>
+                            </li>
+                            <li>
+                                <a href="">資格資格</a>
+                            </li>
+                            <li>
+                                <a href="">資格資格</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#" class="ad">広告</a>
+                <div class="right-menu">
+                <ul>
+                    <li>
+                        <a href="">資格一覧</a>
+                    </li>
+                    <li>
+                        <a href="">体験談一覧</a>
+                    </li>
+                    <li>
+                        <a href="">掲示板一覧</a>
+                    </li>
+                    <li>
+                        <a href="">コラム</a>
+                    </li>
+                    <li>
+                        <a href="">投稿する</a>
+                    </li>
+                </ul>
+                </div>
+                <a href="#" class="ad">広告</a>
             </div>
         </div>
     </div>

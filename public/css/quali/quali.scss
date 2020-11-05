@@ -1,18 +1,12 @@
 .quali-top {
     margin: 20px 0 10px 0;
     display: flex;
-    height: 50px;
 }
 .shikaku {
-    font-size: 45px;
+    font-size: 40px;
     // display: inline-block;
-}
-
-.explanation {
-    margin: 0 0 20px 0;
-    letter-spacing: 2px;
-    line-height: 20px;
-    padding-right: 4em;
+    height: 100%;
+    width: 50%;
 }
 
 table {
@@ -22,7 +16,7 @@ table {
 
 tr {
     border: 1px solid;
-    height: 25px;
+    height: 100%;
     th {
         border: 1px solid;
         padding: 2px;
@@ -31,4 +25,53 @@ tr {
         border: 1px solid;
         padding: 2px;
     }
+}
+
+//チェックボックス
+
+.accordion {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.acd-check{
+    display: none;
+}
+
+.acd-label{
+    color: #32CBC8;
+    display: inline-block;
+    background-color: whitesmoke;
+    padding: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.acd-content{
+    // border: 1px solid #333;
+    height: 0;
+    opacity: 0;
+    padding: 0 10px;
+    transition: .5s;
+    visibility: hidden;
+    letter-spacing: 2px;
+    line-height: 20px;
+}
+
+//+はすぐすぐ後の要素にのみ適用
+
+.acd-check:checked + .acd-label + .acd-content{
+    height: 100%;
+    opacity: 1;
+    padding: 10px;
+    visibility: visible;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width:780px){
+.shikaku {
+    font-size: 25px;
+}
+
 }

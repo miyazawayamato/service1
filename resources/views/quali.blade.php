@@ -6,7 +6,8 @@
 
 @section('main')
     <div class="quali-top">
-        <h2 class="shikaku">{{ $quali->certificate }}</h2>
+        <!-- <h2 class="shikaku">{{ $quali->certificate }}</h2> -->
+        <h2 class="shikaku">こんにちはこんに</h2>
         <table>
             <tr>
                 <th>受験日</th>
@@ -20,8 +21,16 @@
             </tr>
         </table>
     </div>
-    <p class="explanation">ここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入ります</p>
-    <p><a href="{{route('postform')}}">投稿する</a></p>
-    <p><a href="{{route('board', [$id])}}">掲示板へ</a></p>
-    <p><a href="{{route('experiences', [$id])}}">体験談一覧へ</a></p>
+    <div class="accordion">
+        <input id="acd-check1" class="acd-check" type="checkbox">
+        <label class="acd-label" for="acd-check1">詳しい情報</label>
+        <div class="acd-content">
+            <p>ここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入ります</p>
+        </div>
+    </div>
+    <div class="maining">
+        <p><a href="{{route('postform')}}">投稿する</a></p>
+        <p><a href="{{route('board', [$id])}}">掲示板へ</a></p>
+        <p><a href="{{route('experiences', [$id])}}">体験談一覧へ</a></p>
+    </div>
 @endsection

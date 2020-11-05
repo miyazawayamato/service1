@@ -109,6 +109,7 @@ input, select {
   font-size: 40px;
   color: #32CBC8;
   text-decoration: none;
+  display: inline-block;
 }
 
 .login {
@@ -167,7 +168,7 @@ input, select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: white;
+  background-color: whitesmoke;
 }
 
 .left {
@@ -175,13 +176,31 @@ input, select {
       -ms-flex: 3.5;
           flex: 3.5;
   padding: 0 20px;
+  background-color: white;
 }
 
 .right {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  border-left: 5px dotted #CAE65C;
+  height: 1050px;
+  background-color: white;
+  padding-top: 30px;
+}
+
+.rank, .right-menu {
   border: 1px solid;
+  width: 100%;
+  height: 300px;
+}
+
+.ad {
+  display: block;
+  width: 100%;
+  height: 200px;
+  border: 1px solid;
+  background-color: yellow;
 }
 
 footer {
@@ -238,5 +257,17 @@ footer {
 .switch:hover {
   font-weight: bold;
   background-color: #CAE65C;
+}
+
+@media screen and (max-width: 780px) {
+  .header-main {
+    padding-top: 20px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .main {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

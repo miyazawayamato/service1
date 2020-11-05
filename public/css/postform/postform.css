@@ -1,3 +1,10 @@
+.postfrom-tittle {
+  margin-top: 30px;
+  font-size: 35px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #CAE65C;
+}
+
 form {
   font-size: 20px;
   margin-top: 30px;
@@ -5,9 +12,48 @@ form {
 
 .box {
   margin-bottom: 40px;
+  border-bottom: 1px solid black;
+}
+
+.box span {
+  width: 30%;
+  display: inline-block;
 }
 
 .box p {
+  margin-bottom: 15px;
+}
+
+.box input {
+  height: 100%;
+  margin-bottom: 5px;
+}
+
+.box select {
+  height: 100%;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.box textarea {
+  height: 140px;
+  width: 80%;
+  font-size: 20px;
   margin-bottom: 10px;
+}
+
+.box-selection {
+  display: inline-block;
+}
+
+.post-btn {
+  text-align: center;
+}
+
+button {
+  width: 35%;
+  margin-bottom: 8%;
+  font-size: 25px;
+  height: 40px;
 }
 /*# sourceMappingURL=postform.css.map */

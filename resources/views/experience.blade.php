@@ -7,16 +7,21 @@
 @section('main')
     <h3>経験レポート</h3>
     <div class="report">
-        <p class="type">資格書士</p>
-        <dl class="contributor">
-            <dt>投稿者</dt>
-            <dd>{{$texts->name}}</dd>
-        </dl>
-        <dl class="contributor">
-            <dt>更新日</dt>
-            <dd>{{$texts->created_at}}</dd>
-        </dl>
-        <span><i class="fas fa-check"></i>役立ち</span>
+        <div class="report-top">
+            <p class="type">資格書士</p>
+            <div class="time-like">
+                <span class="time">更新日　{{$texts->created_at->format('Y/m/d')}}</span>
+                <span class="like"><i class="fas fa-check"></i>役立ち23</span>
+            </div>
+        </div>
+        
+        
+        
+        
+        <div class="contributor">
+            <span class="naming">投稿者</span>
+            <span class="name">{{$texts->name}}</span>
+        </div>
         <dl>
             <dt>勉強期間</dt>
             <dd>ここに個人の情報を入れる</dd>
@@ -35,7 +40,7 @@
         </dl>
         <dl>
             <dt>教材・スクール等</dt>
-            <dd>ここに個人の情報を入れる</dd>
+            <dd>ここに個人の情報を入れるここに個人の情報を入れるここに個人の情報を入れるここに個人の情報を入れるここに個人の情報を入れるここに個人の情報を入れるここに個人の情報を入れるここに個人の情報を入れる</dd>
         </dl>
         <dl>
             <dt>当時の職業</dt>
