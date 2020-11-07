@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostForm;//バリデーション
 use Illuminate\Http\Request;
 use App\Models\Board;
 use App\Models\GyouseisyosiBoard;
+
 
 class BoardController extends Controller
 {
@@ -29,7 +31,10 @@ class BoardController extends Controller
     }
     
     //追加処理
-    public function add(Request $request) {
+    public function add(PostForm $request) {
+        dd($request);
+        $validated = $request->validated();
+        
         $id = $request->id;
         $inputs = $request->all();
         //idならその掲示板モデルに追加処理

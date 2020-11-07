@@ -8,6 +8,10 @@ use App\Models\GyouseisyosiTable;
 
 class ExperienceController extends Controller
 {
+    //一覧
+    public function Reports() {
+        return view('reports');
+    }
     //一覧表示
     public function showList($id) {
         

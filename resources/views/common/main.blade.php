@@ -13,8 +13,8 @@
     <div class="transe"></div>
         <div class="header-main">
             <div class="header-top">
-                <a href="{{route('home')}}"><h1 class="header-logo">ドクシカ</h1></a>
-                <span class="login">
+                <a href="{{route('home')}}" class="fon-top"><h1 class="header-logo">ドクシカ</h1></a>
+                <span class="login fon-top">
                     @if (Route::has('login'))
                         @auth
                             <a href="{{ url('/dashboard') }}" class="tetext-gray-700underline">Dashboard</a>
@@ -31,7 +31,7 @@
                 <nav>
                     <ul class="headnavi">
                         <li><a href="{{route('qualis')}}">資格一覧</a></li>
-                        <li><a href="#">体験談一覧</a></li>
+                        <li><a href="{{route('reports')}}">体験談一覧</a></li>
                         <li><a href="#">掲示板一覧</a></li>
                         <li><a href="{{route('postform')}}">投稿する</a></li>
                         <li><a href="{{route('article')}}">コラム</a></li>
@@ -53,25 +53,26 @@
                     <div class="ranking">
                         <ul>
                             <li>
-                                <a href="">資格資格</a>
+                                <a href="">１、資格資格</a>
                             </li>
                             <li>
-                                <a href="">資格資格</a>
+                                <a href="">２、資格資格</a>
                             </li>
                             <li>
-                                <a href="">資格資格</a>
+                                <a href="">３、資格資格</a>
                             </li>
                             <li>
-                                <a href="">資格資格</a>
+                                <a href="">４、資格資格</a>
                             </li>
                             <li>
-                                <a href="">資格資格</a>
+                                <a href="">５、資格資格</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <a href="#" class="ad">広告</a>
                 <div class="right-menu">
+                <h3>メニュー</h3>
                 <ul>
                     <li>
                         <a href="">資格一覧</a>

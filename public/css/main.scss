@@ -176,9 +176,16 @@ input, select {
 }
 
 .rank, .right-menu {
-    border: 1px solid;
     width: 100%;
-    height: 300px;
+    height: 280px;
+    padding: 10px 0 0 15px;
+    h3 {
+        margin-bottom: 25px;
+        font-size: 20px;
+    }
+    li {
+        margin-bottom: 20px;
+    }
 }
 
 .ad {
@@ -261,5 +268,28 @@ footer {
 
 //スマートフォン
 @media screen and (max-width:480px){
-    
+.header-main {
+    width: 100%;
+}
+.header-top {
+    display: flex;
+}
+.fon-top {
+    display: block;
+    flex: 1;
+}
+.login {
+    padding: 8px 20px 0 0;
+}
+.main {
+    display: block;
+}
+.right {
+    display: none;
+}
+.main-back {
+    background-color: whitesmoke;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 }

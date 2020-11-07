@@ -45,9 +45,10 @@ Route::get('/qualifications',[QualificationController::class, 'show'])->name('qu
 //資格個別
 Route::get('/qualification/{id}',[QualificationController::class,'Individual'])->name('quali');
 
-//体験談一覧
+//体験談
+Route::get('/experiences',[ExperienceController::class, 'Reports'])->name('reports');
+//体験談個別一覧
 Route::get('/experiences/{id}',[ExperienceController::class, 'showList'])->name('experiences');
-
 //体験談個別
 Route::get('/experience/{id}/{qualiexp_id}',[ExperienceController::class, 'show'])->name('experience');
 

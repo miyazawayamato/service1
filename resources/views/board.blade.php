@@ -40,10 +40,16 @@
       <div class="nickname">
         <span>ニックネーム</span>
         <input type="text" name="name">
+        @if ($errors->has('name'))
+          <p>{{$errors->first('name')}}</p>
+        @endif
       </div>
       <div class="form-text">
         <span>投稿内容</span>
         <textarea name="message"></textarea>
+        @if ($errors->has('message'))
+          <p>{{$errors->first('message')}}</p>
+        @endif
       </div>
       <div class="btn">
         <button type="submit">投稿</button>

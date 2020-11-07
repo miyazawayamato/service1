@@ -190,9 +190,18 @@ input, select {
 }
 
 .rank, .right-menu {
-  border: 1px solid;
   width: 100%;
-  height: 300px;
+  height: 280px;
+  padding: 10px 0 0 15px;
+}
+
+.rank h3, .right-menu h3 {
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+
+.rank li, .right-menu li {
+  margin-bottom: 20px;
 }
 
 .ad {
@@ -268,6 +277,37 @@ footer {
   }
   .main {
     width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header-main {
+    width: 100%;
+  }
+  .header-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .fon-top {
+    display: block;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .login {
+    padding: 8px 20px 0 0;
+  }
+  .main {
+    display: block;
+  }
+  .right {
+    display: none;
+  }
+  .main-back {
+    background-color: whitesmoke;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 /*# sourceMappingURL=main.css.map */
