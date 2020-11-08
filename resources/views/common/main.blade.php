@@ -17,7 +17,7 @@
                 <span class="login fon-top">
                     @if (Route::has('login'))
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="tetext-gray-700underline">Dashboard</a>
+                            <a href="{{ url('/dashboard') }}" class="tetext-gray-700underline">マイページ</a>
                         @else
                             <a href="{{ route('login') }}">ログイン/</a>
                             @if (Route::has('register'))
@@ -31,8 +31,8 @@
                 <nav>
                     <ul class="headnavi">
                         <li><a href="{{route('qualis')}}">資格一覧</a></li>
-                        <li><a href="{{route('reports')}}">体験談一覧</a></li>
-                        <li><a href="#">掲示板一覧</a></li>
+                        <li><a href="trial">体験談一覧</a></li>
+                        <li><a href="trial">掲示板一覧</a></li>
                         <li><a href="{{route('postform')}}">投稿する</a></li>
                         <li><a href="{{route('article')}}">コラム</a></li>
                     </ul>
@@ -75,19 +75,19 @@
                 <h3>メニュー</h3>
                 <ul>
                     <li>
-                        <a href="">資格一覧</a>
+                        <a href="{{route('qualis')}}">資格一覧</a>
                     </li>
                     <li>
-                        <a href="">体験談一覧</a>
+                        <a href="trial">体験談一覧</a>
                     </li>
                     <li>
-                        <a href="">掲示板一覧</a>
+                        <a href="trial">掲示板一覧</a>
                     </li>
                     <li>
-                        <a href="">コラム</a>
+                        <a href="{{route('article')}}">コラム</a>
                     </li>
                     <li>
-                        <a href="">投稿する</a>
+                        <a href="{{route('postform')}}">投稿する</a>
                     </li>
                 </ul>
                 </div>

@@ -39,16 +39,16 @@
     <input type="hidden" name="id" value="{{$id}}">
       <div class="nickname">
         <span>ニックネーム</span>
-        <input type="text" name="name">
+        <input type="text" name="name" value="{{old('name')}}">
         @if ($errors->has('name'))
-          <p>{{$errors->first('name')}}</p>
+          <p style="color: red">{{$errors->first('name')}}</p>
         @endif
       </div>
       <div class="form-text">
         <span>投稿内容</span>
-        <textarea name="message"></textarea>
+        <textarea name="message" placeholder="150字以内" >{{old('message')}}</textarea>
         @if ($errors->has('message'))
-          <p>{{$errors->first('message')}}</p>
+          <p style="color: red">{{$errors->first('message')}}</p>
         @endif
       </div>
       <div class="btn">

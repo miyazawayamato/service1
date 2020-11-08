@@ -5,6 +5,7 @@
 @endsection
 
 @section('main')
+    <h3 style="font-size: 40px">準備中です、今後の更新をお待ちください</h3>
     <div class="container">
         <dl>
             @foreach ($articles as $article)

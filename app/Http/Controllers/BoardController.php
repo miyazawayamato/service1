@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PostForm;//バリデーション
+use App\Http\Requests\BoardPost;//バリデーション
 use Illuminate\Http\Request;
 use App\Models\Board;
 use App\Models\GyouseisyosiBoard;
@@ -31,8 +31,7 @@ class BoardController extends Controller
     }
     
     //追加処理
-    public function add(PostForm $request) {
-        dd($request);
+    public function add(BoardPost $request) {
         $validated = $request->validated();
         
         $id = $request->id;

@@ -33,6 +33,10 @@ Route::get('/',[HomeController::class, 'show'])->name('home');
 Route::get('/board/{id}',[BoardController::class, 'show'])->name('board');
 //掲示板投稿
 Route::post('/boardadd',[BoardController::class, 'add'])->name('boardadd');
+//掲示板一覧
+Route::get('/trial', function () {
+    return view('trial');
+});
 
 //いいね機能
 Route::get('/reply/like/{id}', 'RepliesController@like')->name('reply.like');
