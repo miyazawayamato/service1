@@ -6,21 +6,18 @@
 
 @section('main')
     <h2>資格一覧</h2>
+    <a href="{{ route('quali', ['id' => 1])}}" class="quali">司法書士</a>
     <div class="qualis-main">
       <h3>法律系一覧</h3>
       <ul class="qualis-menu">
-        <li class="quali-box"><a href="{{ route('quali', ['id' => 1])}}" class="quali">司法書士</a><a href="{{route('board', ['id' => 1])}}" class="board-root">資格資格掲示板へ</a><a href="{{route('experiences', ['id' => 1])}}" class="exp-root">資格資格体験談へ</a><a href="#" class="post-roof">投稿する</a></li>
-        <li class="quali-box"><span class="quali">行政書士</span><a href="#" class="board-root">資格資格掲示板へ</a><a href="#" class="exp-root">資格資格体験談へ</a><a href="#" class="post-roof">投稿する</a></li>
-        <li class="quali-box"><span class="quali">税理士</span><a href="#" class="board-root">資格資格掲示板へ</a><a href="#" class="exp-root">資格資格体験談へ</a><a href="#" class="post-roof">投稿する</a></li>
-        <li class="quali-box"><span class="quali">資格資格</span><a href="#" class="board-root">しかくの掲示板へ</a><a href="#" class="exp-root">シカクノ体験談へ</a><a href="#" class="post-roof">投稿する</a></li>
-        <li class="quali-box"><span class="quali">資格資格</span><a href="#" class="board-root">しかくの掲示板へ</a><a href="#" class="exp-root">シカクノ体験談へ</a><a href="#" class="post-roof">投稿する</a></li>
-        <li class="quali-box"><span class="quali">資格資格</span><a href="#" class="board-root">しかくの掲示板へ</a><a href="#" class="exp-root">シカクノ体験談へ</a><a href="#" class="post-roof">投稿する</a></li>
-        <li class="quali-box"><span class="quali">資格資格</span><a href="#" class="board-root">しかくの掲示板へ</a><a href="#" class="exp-root">シカクノ体験談へ</a><a href="#" class="post-roof">投稿する</a></li>
-        <li class="quali-box"><span class="quali">資格資格</span><a href="#" class="board-root">しかくの掲示板へ</a><a href="#" class="exp-root">シカクノ体験談へ</a><a href="#" class="post-roof">投稿する</a></li>
-        <li class="quali-box"><span class="quali">資格資格</span><a href="#" class="board-root">しかくの掲示板へ</a><a href="#" class="exp-root">シカクノ体験談へ</a><a href="#" class="post-roof">投稿する</a></li>
-        <li class="quali-box"><span class="quali">資格資格</span><a href="#" class="board-root">しかくの掲示板へ</a><a href="#" class="exp-root">シカクノ体験談へ</a><a href="#" class="post-roof">投稿する</a></li>
-        <li class="quali-box"><span class="quali">資格資格</span><a href="#" class="board-root">しかくの掲示板へ</a><a href="#" class="exp-root">シカクノ体験談へ</a><a href="#" class="post-roof">投稿する</a></li>
-        <li class="quali-box"><span class="quali">資格資格</span><a href="#" class="board-root">しかくの掲示板へ</a><a href="#" class="exp-root">シカクノ体験談へ</a><a href="#" class="post-roof">投稿する</a></li>
+        @foreach ($qualis as $quali)
+        <li class="quali-box">
+          <span class="quali">{{$quali->certificate}}</span>
+          <a href="{{route('board', ['id' => $quali->id])}}" class="board-root">資格資格掲示板へ</a>
+          <a href="{{route('experiences', ['id' => $quali->id])}}" class="exp-root">資格資格体験談へ</a>
+          <a href="{{route('postform')}}" class="post-roof">投稿する</a>
+        </li>
+        @endforeach
       </ul>
       <ul>
         <li></li>

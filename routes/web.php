@@ -47,7 +47,7 @@ Route::get('/trial', function () {
 //資格一覧
 Route::get('/qualifications',[QualificationController::class, 'show'])->name('qualis');
 
-//資格個別
+//資格個別 多分いらない気がする・・・
 Route::get('/qualification/{id}',[QualificationController::class,'Individual'])->name('quali');
 
 //体験談

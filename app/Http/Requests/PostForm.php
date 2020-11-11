@@ -25,9 +25,15 @@ class PostForm extends FormRequest
     {
         return [
             //
-            'name' => 'required'
-            ,
-            'message' => 'required|max:150',
+            'name' => 'required',
+            'qualiexp_id' => 'required',
+            'period' =>'required',
+            'time' =>'required',
+            'how' =>'required',
+            'profession' =>'required',
+            'purpose' =>'required',
+            'material' =>'required',
+            'body' => 'required|max:150',
         ];
     }
     // エラーメッセージ
@@ -35,8 +41,16 @@ class PostForm extends FormRequest
     {
         return [
             'name.required' => '名前を入力してください',
-            'message.required' => '内容を入力してください',
-            'message.max' => '文字数がオーバーしています',
+            'body.required' => '内容を入力してください',
+            'body.max' => '文字数がオーバーしています',
+            'qualiexp_id.required' => '値を選択してください',
+            'time.required' => '値を選択してください',
+            'how.required' => '値を選択してください',
+            'profession.required' => '値を選択してください',
+            
+            'period.required' => '内容を入力してください',
+            'purpose.required' => '内容を入力してください', 
+            'material.required' => '内容を入力してください'
         ];
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PostForm;//バリデーション
 use App\Models\GyouseisyosiTable;
 use App\Models\SihousyosiTable;
 
@@ -14,7 +15,9 @@ class PostformController extends Controller
     }
     
     //投稿メソッド
-    public function posting(Request $request) {
+    public function posting(PostForm $request) {
+        $validated = $request->validated();
+        
         $id = $request->qualiexp_id;
         $inputs = $request->all();
         //モデルで指定をしっかりする。主キーはしない。fillable

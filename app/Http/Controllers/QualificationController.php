@@ -9,8 +9,13 @@ class QualificationController extends Controller
 {
     //一覧表示
     public function show() {
-        return view('qualis');
+        
+        $qualis = Qualification::all();
+        
+        return view('qualis', ['qualis' => $qualis]);
     }
+    
+    
     //個別表示
     public function Individual($id) {
         

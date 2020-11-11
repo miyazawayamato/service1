@@ -13,8 +13,12 @@ class QualificationsToPostsTable extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            //
+        Schema::table('qualifications', function (Blueprint $table) {
+            //資格各種
+            $table->text('body');
+            $table->string('time');
+            $table->string('passrate');
+            $table->string('class');
         });
     }
 
@@ -25,7 +29,7 @@ class QualificationsToPostsTable extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::table('qualifications', function (Blueprint $table) {
             //
         });
     }

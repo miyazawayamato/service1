@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 //追加
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
+use App\Http\Requests\Contact;//バリデーション
 
 
 class ContactController extends Controller
@@ -16,9 +17,9 @@ class ContactController extends Controller
     }
     
     //送信メソッド
-    public function send(Request $request) {
-        //バリデーションを実行予定
-
+    public function send(Contact $request) {
+        //バリデーションを実行
+        $validated = $request->validated();
         //フォームから受け取ったactionの値を取得
         // $action = $request->input('action');
         

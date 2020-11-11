@@ -10,27 +10,27 @@
         <div class="home-main">
             <ul class="boxs">
             <!-- foreach処理を入れる -->
-                @for($i = 1; $i < 13; $i++ )
+                @foreach($qualis as $quali)
                 <li class="home-box">
                     <div class="box">
-                        <a href="#">
-                            <h3>資格資格</h3>
+                        <a href="{{route('experiences', ['id' => $quali->id])}}">
+                            <h3>{{$quali->certificate}}</h3>
                             <dl>
                                 <dt>受験日</dt>
-                                <dd>10月中旬ごろ</dd>
+                                <dd>{{$quali->time}}</dd>
                             </dl>
                             <dl>
                                 <dt>合格率</dt>
-                                <dd>10%前後(約2000人)</dd>
+                                <dd>{{$quali->passrate}}</dd>
                             </dl>
                             <dl>
                                 <dt>資格区分</dt>
-                                <dd>民間</dd>
+                                <dd>{{$quali->class}}</dd>
                             </dl>
                         </a>
                     </div>
                 </li>
-                @endfor
+                @endforeach
             </ul>
         </div>
     </div>

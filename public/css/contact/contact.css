@@ -1,0 +1,19 @@
+.contact-tittle {
+  margin: 20px;
+  font-size: 40px;
+}
+
+.btn {
+  display: block;
+  margin-bottom: 25px;
+}
+
+.item {
+  margin-top: 20px;
+}
+
+.contact-body {
+  height: 120px;
+  width: 50%;
+}
+/*# sourceMappingURL=contact.css.map */
