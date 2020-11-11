@@ -14,6 +14,7 @@
         <div class="header-main">
             <div class="header-top">
                 <a href="{{route('home')}}" class="fon-top"><h1 class="header-logo">ドクシカ</h1></a>
+                <p class="sub-logo">資格取得を助けるサイト</p>
                 <span class="login fon-top">
                     @if (Route::has('login'))
                         @auth
@@ -70,7 +71,7 @@
                         </ul>
                     </div>
                 </div>
-                <a href="#" class="ad">広告</a>
+                <a href="#" class="ad"></a>
                 <div class="right-menu">
                 <h3>メニュー</h3>
                 <ul>
@@ -91,7 +92,7 @@
                     </li>
                 </ul>
                 </div>
-                <a href="#" class="ad">広告</a>
+                <a href="#" class="ad"></a>
             </div>
         </div>
     </div>
@@ -100,7 +101,7 @@
         <div class="transe"></div>
         <div class="foot">
             <h3 class="foot-logo">ドクシカ</h3>
-            <a href="#" class="foot-form">お問い合わせフォーム</a>
+            <a href="{{route('contact')}}" class="foot-form">お問い合わせ/ご意見・ご要望フォーム</a>
         </div>
         <p class="copyright">Copyright(C) sample office. All Rights Reserved.</p>
     </footer>

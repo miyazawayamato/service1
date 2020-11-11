@@ -95,7 +95,7 @@ input, select {
 }
 
 .header-main {
-  padding-top: 20px;
+  padding-top: 15px;
   width: 83%;
   margin: 0 auto;
   text-align: center;
@@ -110,6 +110,11 @@ input, select {
   color: #32CBC8;
   text-decoration: none;
   display: inline-block;
+}
+
+.sub-logo {
+  opacity: 0.7;
+  margin-top: 5px;
 }
 
 .login {
@@ -208,8 +213,8 @@ input, select {
   display: block;
   width: 100%;
   height: 200px;
-  border: 1px solid;
-  background-color: yellow;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
 }
 
 footer {
@@ -294,6 +299,9 @@ footer {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+  }
+  .sub-logo {
+    display: none;
   }
   .login {
     padding: 8px 20px 0 0;

@@ -5,6 +5,7 @@
 @endsection
 @section('main')
     <div class="home">
+        <p class="introduction">資格取得のための合格者の体験談や掲示板サイトです<br>試運転中＆公開直後</p>
         <h2>資格情報</h2>
         <div class="home-main">
             <ul class="boxs">
