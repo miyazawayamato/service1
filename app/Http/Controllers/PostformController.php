@@ -7,6 +7,8 @@ use App\Http\Requests\PostForm;//バリデーション
 use App\Models\GyouseisyosiTable;
 use App\Models\SihousyosiTable;
 
+use Illuminate\Support\Facades\Auth;
+
 class PostformController extends Controller
 {
     //投稿画面表示

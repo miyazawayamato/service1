@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Qualification;
 use App\Models\SihousyosiTable;
 use App\Models\GyouseisyosiTable;
+use App\Models\User;
 
 class ExperienceController extends Controller
 {
@@ -12,8 +14,11 @@ class ExperienceController extends Controller
     public function Reports() {
         return view('reports');
     }
+    
     //一覧表示
     public function showList($id) {
+        //$idは資格種類の主キー
+        $quali = Qualification::find($id);
         
         switch ($id) {
             case 1:
@@ -28,7 +33,8 @@ class ExperienceController extends Controller
             default: 
             return('失敗しました');
         }
-        return view('experiences', ['id' => $id, 'exps' => $exps]);
+        //名前の取得がしたい
+        return view('experiences', ['id' => $id, 'exps' => $exps,'quali' => $quali]);
     }
     
     //上下別のコントローラーがいい？
@@ -48,6 +54,12 @@ class ExperienceController extends Controller
             default: 
             return('失敗しました');
         }
-        return view('experience',['texts' => $texts]);
+        
+        //$textsでカラムを取得しー＞でuseridを取得
+        $userid = $texts->user_id;
+        //そのuseridでuserテーブルからnameを取得
+        $name = User::find($userid)->name;
+        
+        return view('experience',['texts' => $texts, 'name' => $name]);
     }
 }

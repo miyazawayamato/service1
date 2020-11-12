@@ -9,6 +9,8 @@ use App\Http\Controllers\QualificationController;//資格一覧のコントロ�
 use App\Http\Controllers\ExperienceController;//体験談のコントローラー
 use App\Http\Controllers\PostformController;//投稿のコントローラー
 use App\Http\Controllers\ContactController;//お問い合わせのコントローラー
+use App\Http\Controllers\RepliesController;//いいねのコントローラー
+use App\Http\Controllers\MypageController;//編集のコントローラー
 
 
 /*
@@ -40,9 +42,9 @@ Route::get('/trial', function () {
 });
 
 // //いいね機能
-// Route::get('/reply/like/{id}', 'RepliesController@like')->name('reply.like');
+Route::get('/reply/like/{id}', [RepliesController::class, 'like'])->name('reply.like');
 // //言いを外す
-// Route::get('/reply/unlike/{id}', 'RepliesController@unlike')->name('reply.unlike');
+Route::get('/reply/unlike/{id}', [RepliesController::class, 'unlike'])->name('reply.unlike');
 
 //資格一覧
 Route::get('/qualifications',[QualificationController::class, 'show'])->name('qualis');
@@ -70,10 +72,12 @@ Route::get('/contact',[ContactController::class, 'form'])->name('contact');
 //送信
 Route::post('/contact/done',[ContactController::class, 'send'])->name('contact.send');
 
-//認証機能？
+//認証機能 マイページへ
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('mypage');
 })->name('mypage');
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
+
+Route::get('/dashboard/edit',[MypageController::class, 'edit'])->name('edit');

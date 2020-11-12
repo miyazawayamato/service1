@@ -7,6 +7,7 @@ use App\Models\Qualification;
 
 class QualificationController extends Controller
 {
+    
     //一覧表示
     public function show() {
         

@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="css/postform/postform.css"/>
 @endsection
 @section('main')
+  @auth
     <h2 class="postfrom-tittle">受験レポート投稿</h2>
     <div class="posting">
       <form action="{{route('postform')}}" method="post">
@@ -79,14 +80,16 @@
         </div>
         <div class="box">
           <p>教材・スクール等</p>
-          <textarea name="material" class="box-selection">{{ old('material') }}</textarea>
+          <textarea name="material" class="box-selection" onkeyup="Length(value);">{{ old('material') }}</textarea>
+          <p id="counter">0文字</p>
           @if ($errors->has('material'))
             <p style="color: red">{{$errors->first('material')}}</p>
           @endif
         </div>
         <div class="box">
           <p>勉強手順・注意した点</p>
-          <textarea name="body" maxlength="文字数" class="box-selection">{{ old('body') }}</textarea>
+          <textarea name="body" maxlength="文字数" class="box-selection" onkeyup="ShowLength(value);">{{ old('body') }}</textarea>
+          <p id="inputlength">0文字</p>
           @if ($errors->has('body'))
             <p style="color: red">{{$errors->first('body')}}</p>
           @endif
@@ -96,4 +99,13 @@
         </div>
       </form>
     </div>
+  <script src="{{ asset('js/postcount.js') }}"></script>
+  @endauth
+  @guest
+  <h2>ログインか新規会員登録を行ってください</h2>
+  <a href="{{ route('login') }}">ログイン/</a>
+  @if (Route::has('register'))
+      <a href="{{ route('register') }}">新規登録</a>
+  @endif
+  @endguest
 @endsection

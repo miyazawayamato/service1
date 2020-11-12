@@ -16,7 +16,7 @@
         </div>
         <div class="contributor">
             <span class="naming">投稿者</span>
-            <span class="name">{{$texts->name}}</span>
+            <span class="name">{{$name}}</span>
         </div>
         <dl>
             <dt>勉強期間</dt>

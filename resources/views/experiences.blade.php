@@ -6,7 +6,7 @@
 @endsection
 @section('main')
     <div class="quali-top">
-        <h2 class="shikaku">資格名がは</h2>
+        <h2 class="shikaku">{{$quali->certificate}}</h2>
         <table>
             <tr>
                 <th>受験日</th>
@@ -14,9 +14,9 @@
                 <th>資格区分</th>
             </tr>
             <tr>
-                <td>10月中旬ごろ</td>
-                <td>10%前後(約2000人)</td>
-                <td>民間</td>
+                <td>{{$quali->time}}</td>
+                <td>{{$quali->passrate}}</td>
+                <td>{{$quali->class}}</td>
             </tr>
         </table>
     </div>
@@ -24,7 +24,7 @@
         <input id="acd-check1" class="acd-check" type="checkbox">
         <label class="acd-label" for="acd-check1">詳しい情報</label>
         <div class="acd-content">
-            <p>ここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入りますここに軽い説明文が入ります</p>
+            <p>今後の情報追加をお待ちください。</p>
         </div>
     </div>
     <div class="switch-menu">
@@ -36,7 +36,8 @@
     <div class="exp-box">
         <p><a href="{{route('experience', ['id' => $id, 'qualiexp_id' =>$exp->qualiexp_id])}}">体験談へ</a></p>
         <dl>
-            <dt>{{$exp->name}}</dt>
+            {{-- ユーザーネームを記入したい --}}
+            {{-- <dt>{{$name}}</dt> --}}
             <dd>{{$exp->created_at->format('Y/m/d')}}</dd>
             <dd>{{$exp->body}}</dd>
         </dl>
