@@ -15,11 +15,11 @@ class BoardSeeder extends Seeder
      */
     public function run()
     {
-        //Board::factory(20)->create();
-        $inst = new Gyouseisyosiboard([
-            'name' => '行政掲示',
-            'message' => '行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です'
-        ]);
-        $inst->save();
+        Board::factory(20)->create();
+        // $inst = new Gyouseisyosiboard([
+        //     'name' => '行政掲示',
+        //     'message' => '行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です行政書士の掲示板です'
+        // ]);
+        // $inst->save();
     }
 }

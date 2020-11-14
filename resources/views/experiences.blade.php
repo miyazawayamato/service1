@@ -31,10 +31,12 @@
         <a href="#" >体験談一覧</a>
         <a class="switch" href="{{route('board', [$id])}}">掲示板</a>
     </div>
+    
+    
     @foreach ($exps as $exp)
-    <p>{{$exp->qualiexp_id}}</p>
     <div class="exp-box">
-        <p><a href="{{route('experience', ['id' => $id, 'qualiexp_id' =>$exp->qualiexp_id])}}">体験談へ</a></p>
+        {{-- 個別に --}}
+        <p><a href="{{route('experience', ['id' => $id, 'qualiexp_id' => $exp->id])}}">体験談へ</a></p>
         <dl>
             {{-- ユーザーネームを記入したい --}}
             {{-- <dt>{{$name}}</dt> --}}
@@ -43,4 +45,5 @@
         </dl>
     </div>
     @endforeach
+    
 @endsection

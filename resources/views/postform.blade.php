@@ -9,30 +9,33 @@
     <div class="posting">
       <form action="{{route('postform')}}" method="post">
       @csrf
+      <input type="hidden" value="{{$user->id}}" name="user_id">
         <div class="box">
           <span>投稿者ネーム</span>
-          <input name="name" class="box-selection" value="{{ old('name') }}">
-          @if ($errors->has('name'))
-            <p style="color: red">{{$errors->first('name')}}</p>
-          @endif
-        </div>
-        <div class="box">
-          <span>勉強期間</span>
-          <input type="text" class="box-selection" name="period"  value="{{ old('period') }}">
-          @if ($errors->has('period'))
-            <p style="color: red">{{$errors->first('period')}}</p>
-          @endif
+          <input type="text" value="{{$user->name}}" disabled>
         </div>
         <div class="box">
           <span>受験した資格</span>
-          <select name="qualiexp_id" class="box-selection" value="{{ old('qualiexp_id') }}">
+          <select name="qualification_id" class="box-selection" value="{{ old('qualification_id') }}">
             <option value=""></option>
             <option value="1">司法書士</option>
             <option value="2">行政書士</option>
             <option value="3">税理士</option>
           </select>
-          @if ($errors->has('qualiexp_id'))
-            <p style="color: red">{{$errors->first('qualiexp_id')}}</p>
+          @if ($errors->has('qualification_id'))
+            <p style="color: red">{{$errors->first('qualification_id')}}</p>
+          @endif
+        </div>
+        <div class="box">
+          <span>勉強期間</span>
+          <select name="period" class="box-selection" value="{{ old('period') }}">
+            <option value=""></option>
+            <option>1年未満</option>
+            <option>１～2年</option>
+            <option>3年</option>
+          </select>
+          @if ($errors->has('period'))
+            <p style="color: red">{{$errors->first('period')}}</p>
           @endif
         </div>
         <div class="box">
@@ -101,6 +104,8 @@
     </div>
   <script src="{{ asset('js/postcount.js') }}"></script>
   @endauth
+  
+  
   @guest
   <h2>ログインか新規会員登録を行ってください</h2>
   <a href="{{ route('login') }}">ログイン/</a>
@@ -108,4 +113,5 @@
       <a href="{{ route('register') }}">新規登録</a>
   @endif
   @endguest
+  
 @endsection

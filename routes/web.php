@@ -73,9 +73,8 @@ Route::get('/contact',[ContactController::class, 'form'])->name('contact');
 Route::post('/contact/done',[ContactController::class, 'send'])->name('contact.send');
 
 //認証機能 マイページへ
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('mypage');
-})->name('mypage');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[MypageController::class, 'show'])->name('dashboard');
+
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');

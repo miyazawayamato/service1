@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Qualification extends Model
 {
     use HasFactory;
+    
+    public function experience() {
+        return $this->hasMany('App\Models\Experience');
+    }
+    
+    public function message()
+    {
+        return $this->hasMany('App\Models\Board');
+    }
 }

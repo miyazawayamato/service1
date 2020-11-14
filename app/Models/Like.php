@@ -8,17 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Like extends Model
 {
-//     use HasFactory;
-//     protected $fillable = ['board_id','user_id'];
+    use HasFactory;
+    protected $fillable = ['experience_id','user_id'];
 
-//     public function board()
-//     {
-//       return $this->belongsTo(Board::class);
-//     }
+    public function experience()
+    {
+      return $this->belongsTo('App\Models\Experience');
+    }
   
-//     public function user()
-//     {
-//       return $this->belongsTo(User::class);
-//     }
-// }
+    public function user()
+    {
+      return $this->belongsTo('App\Models\User');
+    }
 }
+

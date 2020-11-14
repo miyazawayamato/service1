@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSihousyosiTables extends Migration
+class DropGyouseisyosiTables extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class AddSihousyosiTables extends Migration
      */
     public function up()
     {
-        Schema::table('sihousyosi_tables', function (Blueprint $table) {
-            //
-            $table->unsignedBigInteger('user_id');
+        // Schema::table('gyouseisyosi_tables', function (Blueprint $table) {
             
-            $table->foreign('user_id')->references('id')->on('users');
-        });
+        // });
+        Schema::drop('gyouseisyosi_tables');
     }
 
     /**
@@ -28,7 +26,7 @@ class AddSihousyosiTables extends Migration
      */
     public function down()
     {
-        Schema::table('sihousyosi_tables', function (Blueprint $table) {
+        Schema::table('gyouseisyosi_tables', function (Blueprint $table) {
             //
         });
     }

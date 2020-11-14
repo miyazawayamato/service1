@@ -36,7 +36,7 @@
     <p class="board-form-tittle">投稿フォーム</p>
     <form action="{{route('boardadd')}}" method="post">
     @csrf
-    <input type="hidden" name="id" value="{{$id}}">
+    <input type="hidden" name="qualification_id" value="{{$id}}">
       <div class="nickname">
         <span>ニックネーム</span>
         <input type="text" name="name" value="{{old('name')}}" placeholder="10字以内">
@@ -59,15 +59,15 @@
   </div>
   <div class="article-main">
     <div class="article">
-      <div class="link">
+      {{-- <div class="link">
         {{ $comments->links('vendor.pagination.semantic-ui') }}
-      </div>
+      </div> --}}
       <ul>
         @foreach ($comments as $comment)
         <li>
           <section>
             <div class="comment-top">
-              <span>{{$comment->id}}</span>
+              <span>番号</span>
               <span class="name">{{$comment->name}}</span>
               <div class="comment-info">
                 <time>{{$comment->created_at->format('Y/n/d-H時i分')}}</time>
@@ -91,9 +91,9 @@
         </li>
         @endforeach
       </ul>
-      <div class="link">
+      {{-- <div class="link">
         {{ $comments->links('vendor.pagination.semantic-ui') }}
-      </div>
+      </div> --}}
     </div>
   </div>
   <script src="{{ asset('js/count.js') }}"></script>

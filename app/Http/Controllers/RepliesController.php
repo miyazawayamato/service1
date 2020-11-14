@@ -26,14 +26,15 @@ class RepliesController extends Controller
     
     public function like($id)
     {
-      Like::create([
-        'board_id' => $id,
+        
+        Like::create([
+        'experience_id' => $id,
         'user_id' => Auth::id(),
-      ]);
-  
-      session()->flash('success', 'You Liked the Reply.');
-  
-      return redirect()->back();
+        ]);
+
+        session()->flash('success', 'You Liked the Reply.');
+
+        return redirect()->back();
     }
   
     /**
@@ -44,12 +45,12 @@ class RepliesController extends Controller
      */
     public function unlike($id)
     {
-      $like = Like::where('board_id', $id)->where('user_id', Auth::id())->first();
-      $like->delete();
-  
-      session()->flash('success', 'You Unliked the Reply.');
-  
-      return redirect()->back();
+        $like = Like::where('experience_id', $id)->where('user_id', Auth::id())->first();
+        $like->delete();
+    
+        session()->flash('success', 'You Unliked the Reply.');
+    
+        return redirect()->back();
     }
 }  
   

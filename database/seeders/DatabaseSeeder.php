@@ -16,6 +16,6 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         //必ずここをかませる
         
-        // $this->call(QualificationSeeder::class);
+        $this->call(BoardSeeder::class);
     }
 }

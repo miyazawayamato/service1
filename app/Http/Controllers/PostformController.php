@@ -7,35 +7,28 @@ use App\Http\Requests\PostForm;//バリデーション
 use App\Models\GyouseisyosiTable;
 use App\Models\SihousyosiTable;
 
+use App\Models\Experience;
+
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class PostformController extends Controller
 {
     //投稿画面表示
     public function postform() {
-        return view('postform');
+        
+        $id = Auth::id();
+        $user = User::find($id);
+        
+        return view('postform',['user' => $user]);
     }
     
     //投稿メソッド
     public function posting(PostForm $request) {
         $validated = $request->validated();
+        $inputs = $request->all();//取得追加
+        Experience::create($inputs);//追加
         
-        $id = $request->qualiexp_id;
-        $inputs = $request->all();
-        //モデルで指定をしっかりする。主キーはしない。fillable
-        switch ($id) {
-            case 1: 
-                SihousyosiTable::create($inputs);//追加
-            break;
-            case 2: 
-                GyouseisyosiTable::create($inputs);//追加
-            break;
-            case 3: 
-                return($id);
-            break;
-            default: 
-            return('失敗しました');
-        }
         return view('trial');
         // return view('experience', [$id]);
     }

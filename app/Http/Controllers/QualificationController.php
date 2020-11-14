@@ -17,7 +17,7 @@ class QualificationController extends Controller
     }
     
     
-    //個別表示
+    //個別表示 たぶんいらない
     public function Individual($id) {
         
         $quali = Qualification::find($id);

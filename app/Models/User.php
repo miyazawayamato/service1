@@ -10,7 +10,6 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
-use App\Models\SihousyosiTable;
 
 class User extends Authenticatable
 {
@@ -61,8 +60,9 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
     
-    public function board()
+    public function experience()
     {
-        return $this->hasOne('SihousyosiTable');
+        return $this->hasMany('App\Models\Experience');
     }
+    
 }

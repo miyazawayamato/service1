@@ -24,6 +24,7 @@ class BoardFactory extends Factory
     {
         return [
             //
+            'qualification_id' => $this->faker->numberBetween($min = 1, $max = 10),
             'name' => $this->faker->name,
             'message' => $this->faker->realText(100),
         ];

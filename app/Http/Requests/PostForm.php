@@ -25,8 +25,7 @@ class PostForm extends FormRequest
     {
         return [
             //
-            'name' => 'required',
-            'qualiexp_id' => 'required',
+            'qualification_id' => 'required',
             'period' =>'required',
             'time' =>'required',
             'how' =>'required',
@@ -40,10 +39,9 @@ class PostForm extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => '名前を入力してください',
             'body.required' => '内容を入力してください',
             'body.max' => '文字数がオーバーしています',
-            'qualiexp_id.required' => '値を選択してください',
+            'qualification_id.required' => '値を選択してください',
             'time.required' => '値を選択してください',
             'how.required' => '値を選択してください',
             'profession.required' => '値を選択してください',
