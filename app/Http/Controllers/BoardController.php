@@ -8,52 +8,30 @@ use App\Models\Qualification;
 
 use App\Models\SihousyosiBoard;
 use App\Models\GyouseisyosiBoard;
+use App\Models\Board;
+use App\Models\User;
 
 
 class BoardController extends Controller
 {
     //一覧メニュー表示
     public function show($id) {
-        //資格名取得
+        //資格情報取得
         $quali = Qualification::find($id);
         
-        // orderBy(対象カラム,順番)asc昇順desc降順
-        switch ($id) {
-            case 1: 
-                $comments = SihousyosiBoard::orderBy('id', 'desc')->Paginate(15);
-            break;
-            case 2: 
-                $comments = GyouseisyosiBoard::orderBy('id', 'desc')->Paginate(15);
-            break;
-            case 3: 
-                return($id);
-            break;
-            default: 
-            return('失敗しました');
-        }
+        $comments = Qualification::find($id)->message;
+        //順番を変える
+        // $comments = Board::find($id)->orderBy('id', 'desc')->Paginate(15);
+        
         return view('board', ['comments' => $comments, 'id' => $id,'quali' => $quali]);
     }
     
     //追加処理
     public function add(BoardPost $request) {
         $validated = $request->validated();
-        
-        $id = $request->id;
+        $id = $request->qualification_id;
         $inputs = $request->all();
-        //idならその掲示板モデルに追加処理
-        switch ($id) {
-            case 1: 
-                SihousyosiBoard::create($inputs);//追加
-            break;
-            case 2: 
-                GyouseisyosiBoard::create($inputs);//追加
-            break;
-            case 3: 
-                return($id);
-            break;
-            default: 
-            return('失敗しました');
-        }
+        Board::create($inputs);//追加
         return redirect()->route('board', [$id]);
     }
 }
