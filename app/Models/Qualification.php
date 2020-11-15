@@ -9,7 +9,7 @@ class Qualification extends Model
 {
     use HasFactory;
     
-    public function experience() {
+    public function exps() {
         return $this->hasMany('App\Models\Experience');
     }
     

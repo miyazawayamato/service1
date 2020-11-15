@@ -31,19 +31,26 @@
         <a href="#" >体験談一覧</a>
         <a class="switch" href="{{route('board', [$id])}}">掲示板</a>
     </div>
-    
-    
+    <div class="link">
+        {{ $exps->links('vendor.pagination.semantic-ui') }}
+    </div>
+    @php 
+        $counter = 1;
+    @endphp
     @foreach ($exps as $exp)
     <div class="exp-box">
+        <p>@php echo $counter++; @endphp</p>
         {{-- 個別に --}}
         <p><a href="{{route('experience', ['id' => $id, 'qualiexp_id' => $exp->id])}}">体験談へ</a></p>
         <dl>
-            {{-- ユーザーネームを記入したい --}}
-            {{-- <dt>{{$name}}</dt> --}}
+            {{-- 取得体験談->モデルのメソッド->カラム名 --}}
+            <dt>{{$exp->user->name}}</dt>
             <dd>{{$exp->created_at->format('Y/m/d')}}</dd>
             <dd>{{$exp->body}}</dd>
         </dl>
     </div>
     @endforeach
-    
+    <div class="link">
+        {{ $exps->links('vendor.pagination.semantic-ui') }}
+    </div>
 @endsection

@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/trial.css') }}"/>
 @endsection
 @section('main')
+    <p style="color: #CAE65C">{{$user->name}}</p>
     <p>マイページはコンテンツをさらに追加予定です<br>今後の公開をお待ちください</p>
     {{-- <p>{{$user->body}}</p> --}}
     <table>
@@ -14,7 +15,7 @@
         </tr>
         @foreach($posts as $post)
             <tr>
-                <td>まだ</td>
+                <td>{{$post->qualification->certificate}}</td>
                 <td>{{$post->updated_at->format('Y/m/d')}}</td>
                 <td><a href="#">編集</a></td>
             </tr>

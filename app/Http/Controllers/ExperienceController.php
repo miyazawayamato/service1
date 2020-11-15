@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Qualification;
-use App\Models\SihousyosiTable;
-use App\Models\GyouseisyosiTable;
 use App\Models\Experience;
 
 use App\Models\User;
@@ -19,11 +17,14 @@ class ExperienceController extends Controller
     
     //資格ページ 体験談一覧表示
     public function showList($id) {
-        //$idは資格種類の主キー
-        $quali = Qualification::find($id);
-        // $exps = Experience::where('qualification_id', $id)->get();
         
-        $exps = Qualification::find($id)->experience;
+        
+        //$idは資格種類の主キー
+        //資格情報の取得
+        $quali = Qualification::find($id);
+        
+        $exps = Experience::where('qualification_id', $id)->orderBy('id', 'desc')->Paginate(15);
+        
         
         
         return view('experiences', ['id' => $id, 'exps' => $exps,'quali' => $quali]);

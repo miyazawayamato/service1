@@ -11,10 +11,14 @@ class Experience extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    
-    public function experiences()
+    //メソッド名大事 モデル名と一致？
+    public function user()
     {
-        return $this->hasMany('App\Models\Like', 'reply_id');
+        return $this->belongsTo('App\Models\User');
+    }
+    public function qualification()
+    {
+        return $this->belongsTo('App\Models\Qualification');
     }
     
     public function is_liked_by_auth_user()

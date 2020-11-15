@@ -19,9 +19,7 @@ class BoardController extends Controller
         //資格情報取得
         $quali = Qualification::find($id);
         
-        $comments = Qualification::find($id)->message;
-        //順番を変える
-        // $comments = Board::find($id)->orderBy('id', 'desc')->Paginate(15);
+        $comments = Qualification::find($id)->message()->orderBy('id', 'desc')->Paginate(15);
         
         return view('board', ['comments' => $comments, 'id' => $id,'quali' => $quali]);
     }

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+
+use App\Models\Experience;
 use Illuminate\Support\Facades\Auth;
 
 class MypageController extends Controller
@@ -11,13 +12,15 @@ class MypageController extends Controller
     //mypage 
     public function show() {
         
+        $user = Auth::user();
+        
+        
         $id = Auth::id();
-        $posts = User::find($id)->experience;
+        // $posts = User::find($id)->experiences;
         
-        // $abc = User::find($id)->experience->select('body')->get();
+        $posts = Experience::where('user_id', $id)->get();
         
-        // dd($abc);
-        return view('mypage',['posts' => $posts]);
+        return view('mypage',[ 'user' => $user, 'posts' => $posts]);
     }
     
     //編集ページ

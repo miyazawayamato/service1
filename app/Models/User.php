@@ -60,9 +60,8 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
     
-    public function experience()
+    public function experiences()
     {
         return $this->hasMany('App\Models\Experience');
     }
-    
 }

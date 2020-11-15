@@ -59,15 +59,18 @@
   </div>
   <div class="article-main">
     <div class="article">
-      {{-- <div class="link">
+      <div class="link">
         {{ $comments->links('vendor.pagination.semantic-ui') }}
-      </div> --}}
+      </div>
+      @php 
+        $counter = 1;
+      @endphp
       <ul>
         @foreach ($comments as $comment)
         <li>
           <section>
             <div class="comment-top">
-              <span>番号</span>
+              <span>@php echo $counter++; @endphp</span>
               <span class="name">{{$comment->name}}</span>
               <div class="comment-info">
                 <time>{{$comment->created_at->format('Y/n/d-H時i分')}}</time>
@@ -91,9 +94,9 @@
         </li>
         @endforeach
       </ul>
-      {{-- <div class="link">
+      <div class="link">
         {{ $comments->links('vendor.pagination.semantic-ui') }}
-      </div> --}}
+      </div>
     </div>
   </div>
   <script src="{{ asset('js/count.js') }}"></script>
