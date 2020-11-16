@@ -21,6 +21,12 @@ class Experience extends Model
         return $this->belongsTo('App\Models\Qualification');
     }
     
+    
+    public function likes()
+    {
+      return $this->hasMany('App\Models\ExpLike');
+    }
+    
     public function is_liked_by_auth_user()
     {
         $id = Auth::id();

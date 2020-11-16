@@ -24,9 +24,32 @@ class MypageController extends Controller
     }
     
     //編集ページ
-    public function edit() {
-        //変数=定義した親モデル::クエリ->定義したメソッド名
+    public function edit($id) {
         
-        return view('editmypage',);
+        $exp = Experience::find($id);
+        return view('editmypage',[ 'exp' => $exp]);
+    }
+    
+    public function update(Request $request, $id) {
+        $uppost = Experience::findOrFail($id);
+        
+        $uppost->qualification_id = $request->qualification_id;
+        $uppost->period = $request->period;
+        $uppost->time = $request->time;
+        $uppost->how = $request->how;
+        $uppost->profession = $request->profession;
+        $uppost->purpose = $request->purpose;
+        $uppost->material = $request->material;
+        $uppost->body = $request->body;
+        
+        $uppost->save();
+        
+        return view('trial');
+    }
+    
+    public function delete($id) {
+        $post = Experience::findOrFail($id);//取得
+        Experience::destroy($post);//削除
+        return redirect('/mypage');//リダイレクト
     }
 }

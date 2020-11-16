@@ -76,9 +76,10 @@ section {
 
 .comment-under {
     text-align: right;
-    span {
-        border: 1px solid;
-    }
+}
+
+.like {
+    border: 1px solid;
 }
 
 @media screen and (max-width:780px) {

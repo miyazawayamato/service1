@@ -5,19 +5,19 @@
 @endsection
 @section('main')
     <p style="color: #CAE65C">{{$user->name}}</p>
-    <p>マイページはコンテンツをさらに追加予定です<br>今後の公開をお待ちください</p>
-    {{-- <p>{{$user->body}}</p> --}}
     <table>
         <tr>
             <th>資格名</th>
             <th>最終更新日</th>
             <th>編集</th>
+            <th>削除</th>
         </tr>
         @foreach($posts as $post)
             <tr>
                 <td>{{$post->qualification->certificate}}</td>
                 <td>{{$post->updated_at->format('Y/m/d')}}</td>
-                <td><a href="#">編集</a></td>
+                <td><a href="{{ route('edit', ['id' => $post->id]) }}">編集</a></td>
+                <td><a href="{{ route('delete', ['id' => $post->id]) }}">削除</a></td>
             </tr>
         @endforeach
     </table>

@@ -46,6 +46,7 @@
             {{-- 取得体験談->モデルのメソッド->カラム名 --}}
             <dt>{{$exp->user->name}}</dt>
             <dd>{{$exp->created_at->format('Y/m/d')}}</dd>
+            <dd><i class="fas fa-check"></i>役立ち<span>{{ $exp->likes->count() }}</span></dd>
             <dd>{{$exp->body}}</dd>
         </dl>
     </div>

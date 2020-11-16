@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Like;
+use App\Models\ExpLike;
 use Illuminate\Support\Facades\Auth;
 
-class RepliesController extends Controller
+class ExpLikesController extends Controller
 {
     //
     public function __construct()
@@ -27,8 +27,8 @@ class RepliesController extends Controller
     public function like($id)
     {
         
-        Like::create([
-        'board_id' => $id,
+        ExpLike::create([
+        'experience_id' => $id,
         'user_id' => Auth::id(),
         ]);
 
@@ -45,12 +45,11 @@ class RepliesController extends Controller
      */
     public function unlike($id)
     {
-        $like = Like::where('board_id', $id)->where('user_id', Auth::id())->first();
+        $like = ExpLike::where('experience_id', $id)->where('user_id', Auth::id())->first();
         $like->delete();
     
         session()->flash('success', 'You Unliked the Reply.');
     
         return redirect()->back();
     }
-}  
-  
+}

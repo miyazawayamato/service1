@@ -32,6 +32,12 @@ h3 {
     text-align: right;
 }
 
+.like {
+    span {
+        display: inline;
+    }
+}
+
 
 .contributor {
     // display: flex;
@@ -93,6 +99,13 @@ dl {
         width: 50%;
     }
 }
+
+.like {
+    span {
+        display: inline;
+    }
+}
+
 .time-like {
     display: flex;
     margin: 15px 0;

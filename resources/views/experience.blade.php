@@ -11,16 +11,16 @@
             <p class="type">資格書士</p>
             <div class="time-like">
                 <span class="time">更新日　{{$texts->created_at->format('Y/m/d')}}</span>
-                <span class="like"><i class="fas fa-check"></i>役立ち23</span>
+                {{-- <span class="like"><i class="fas fa-check"></i>役立ち23</span> --}}
+                <div class="like">
+                    @if($texts->is_liked_by_auth_user())
+                      <a href="{{ route('reply.unlike', ['id' => $texts->id]) }}" class="like"><i class="fas fa-check"></i>役立ち<span>{{ $texts->likes->count() }}</span></a>
+                    @else
+                      <a href="{{ route('reply.like', ['id' => $texts->id]) }}" class="like"><i class="fas fa-check"></i>役立ち<span>{{ $texts->likes->count() }}</span></a>
+                    @endif
+                </div>
             </div>
         </div>
-        {{-- <div>
-            @if($experience->is_liked_by_auth_user())
-              <a href="{{ route('reply.unlike', ['id' => $experience->id]) }}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $experience->likes->count() }}</span></a>
-            @else
-              <a href="{{ route('reply.like', ['id' => $experience->id]) }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $experience->likes->count() }}</span></a>
-            @endif
-          </div> --}}
         <div class="contributor">
             <span class="naming">投稿者</span>
             <span class="name">{{$name}}</span>

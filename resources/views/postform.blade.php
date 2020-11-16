@@ -1,7 +1,7 @@
 @extends('common.main')
 @section('title', 'ホーム')
 @section('stylesheet')
-  <link rel="stylesheet" href="css/postform/postform.css"/>
+  <link rel="stylesheet" href="{{ asset('css/postform/postform.css') }}"/>
 @endsection
 @section('main')
   @auth

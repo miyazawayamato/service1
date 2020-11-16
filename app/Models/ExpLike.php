@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class Like extends Model
+class ExpLike extends Model
 {
     use HasFactory;
     protected $guarded = [];
     protected $primaryKey = 'like_id';
 
-    public function board()
+    public function experience()
     {
-      return $this->belongsTo('App\Models\Board');
+      return $this->belongsTo('App\Models\Experience');
     }
   
     public function user()
@@ -22,4 +21,3 @@ class Like extends Model
       return $this->belongsTo('App\Models\User');
     }
 }
-

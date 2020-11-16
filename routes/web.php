@@ -10,6 +10,7 @@ use App\Http\Controllers\ExperienceController;//体験談のコントローラ�
 use App\Http\Controllers\PostformController;//投稿のコントローラー
 use App\Http\Controllers\ContactController;//お問い合わせのコントローラー
 use App\Http\Controllers\RepliesController;//いいねのコントローラー
+use App\Http\Controllers\ExpLikesController;//いいねのコントローラー
 use App\Http\Controllers\MypageController;//編集のコントローラー
 
 
@@ -45,6 +46,10 @@ Route::get('/trial', function () {
 Route::get('/reply/like/{id}', [RepliesController::class, 'like'])->name('reply.like');
 // //言いを外す
 Route::get('/reply/unlike/{id}', [RepliesController::class, 'unlike'])->name('reply.unlike');
+// //体験いいね機能
+Route::get('/exp/like/{id}', [ExpLikesController::class, 'like'])->name('exp.like');
+// //体験言いを外す
+Route::get('/exp/unlike/{id}', [ExpLikesController::class, 'unlike'])->name('exp.unlike');
 
 //資格一覧
 Route::get('/qualifications',[QualificationController::class, 'show'])->name('qualis');
@@ -79,4 +84,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[MypageControl
 //     return view('dashboard');
 // })->name('dashboard');
 
-Route::get('/dashboard/edit',[MypageController::class, 'edit'])->name('edit');
+//編集ページ
+Route::get('/dashboard/edit/{id}',[MypageController::class, 'edit'])->name('edit');
+//編集実行メソッド
+Route::post('/dashboard/edit/{id}/update',[MypageController::class, 'update'])->name('edit.update');
+//削除
+Route::post('/dashboard/edit/{id}/delete',[MypageController::class, 'delete'])->name('edit.delete');

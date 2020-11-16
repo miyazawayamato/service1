@@ -74,22 +74,22 @@
               <span class="name">{{$comment->name}}</span>
               <div class="comment-info">
                 <time>{{$comment->created_at->format('Y/n/d-H時i分')}}</time>
-                <span class="report">報告する</span>
+                {{-- <span class="report">報告する</span> --}}
               </div>
             </div>
             <div class="comment-main">
               <p>{{$comment->message}}</p>
             </div>
             <div class="comment-under">
-              <span><i class="fas fa-check"></i>役立ち</span>
+              {{-- <span><i class="fas fa-check"></i>役立ち</span> --}}
             </div>
-            {{-- <div class="comment-under">
-              @if($reply->is_liked_by_auth_user())
-                <a href="{{ route('reply.unlike', ['id' => $reply->id]) }}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $reply->likes->count() }}</span></a>
+            <div class="comment-under">
+              @if($comment->is_liked_by_auth_user())
+                <a href="{{ route('reply.unlike', ['id' => $comment->id]) }}" class="like"><i class="fas fa-check"></i>役立ち<span>{{ $comment->likes->count() }}</span></a>
               @else
-                <a href="{{ route('reply.like', ['id' => $reply->id]) }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $reply->likes->count() }}</span></a>
+                <a href="{{ route('reply.like', ['id' => $comment->id]) }}" class="like"><i class="fas fa-check"></i>役立ち<span>{{ $comment->likes->count() }}</span></a>
               @endif
-            </div> --}}
+            </div>
           </section>
         </li>
         @endforeach
