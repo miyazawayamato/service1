@@ -37,7 +37,7 @@ class Contact extends FormRequest
         return [
             'email.required' => '名前を入力してください',
             'name.required' => 'メールアドレスを入力してください',
-            'body.required' => 'を入内容力してください',
+            'body.required' => '内容を入力してください',
         ];
     }
 }

@@ -29,17 +29,36 @@ form {
         margin-bottom: 5px;
         font-size: 18px;
     }
-    textarea {
-        height: 140px;
-        width: 80%;
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
 }
 
 .box-selection {
     display: inline-block;
 }
+
+.must {
+    color: red;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.btn {
+    width: 80%;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.purpose {
+    height: 100%;
+}
+
+.material {
+    height: 140px;
+}
+
+.body {
+    height: 280px;
+}
+
 
 .post-btn {
     text-align: center;
@@ -50,4 +69,8 @@ button {
     margin-bottom: 8%;
     font-size: 25px;
     height: 40px;
+}
+
+.selected {
+    background-color: gray;
 }

@@ -35,15 +35,32 @@ form {
   font-size: 18px;
 }
 
-.box textarea {
-  height: 140px;
+.box-selection {
+  display: inline-block;
+}
+
+.must {
+  color: red;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.btn {
   width: 80%;
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-.box-selection {
-  display: inline-block;
+.purpose {
+  height: 100%;
+}
+
+.material {
+  height: 140px;
+}
+
+.body {
+  height: 280px;
 }
 
 .post-btn {
@@ -55,5 +72,9 @@ button {
   margin-bottom: 8%;
   font-size: 25px;
   height: 40px;
+}
+
+.selected {
+  background-color: gray;
 }
 /*# sourceMappingURL=postform.css.map */

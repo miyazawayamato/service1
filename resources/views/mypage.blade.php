@@ -17,7 +17,7 @@
                 <td>{{$post->qualification->certificate}}</td>
                 <td>{{$post->updated_at->format('Y/m/d')}}</td>
                 <td><a href="{{ route('edit', ['id' => $post->id]) }}">編集</a></td>
-                <td><a href="{{ route('delete', ['id' => $post->id]) }}">削除</a></td>
+                <td><a href="{{ route('edit.delete', ['id' => $post->id]) }}">削除</a></td>
             </tr>
         @endforeach
     </table>

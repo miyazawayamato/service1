@@ -30,17 +30,15 @@ class PostForm extends FormRequest
             'time' =>'required',
             'how' =>'required',
             'profession' =>'required',
-            'purpose' =>'required',
-            'material' =>'required',
-            'body' => 'required|max:150',
+            'purpose' =>'required|max:70',
+            'material' =>'required|max:500',
+            'body' => 'required|max:1500',
         ];
     }
     // エラーメッセージ
     public function messages()
     {
         return [
-            'body.required' => '内容を入力してください',
-            'body.max' => '文字数がオーバーしています',
             'qualification_id.required' => '値を選択してください',
             'time.required' => '値を選択してください',
             'how.required' => '値を選択してください',
@@ -48,7 +46,11 @@ class PostForm extends FormRequest
             
             'period.required' => '内容を入力してください',
             'purpose.required' => '内容を入力してください', 
-            'material.required' => '内容を入力してください'
+            'material.required' => '内容を入力してください',
+            'body.required' => '内容を入力してください',
+            'body.max' => '文字数がオーバーしています',
+            'material.max' => '文字数がオーバーしています',
+            'purpose.max' => '文字数がオーバーしています',
         ];
     }
 }

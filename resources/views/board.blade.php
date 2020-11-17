@@ -46,7 +46,7 @@
       </div>
       <div class="form-text">
         <span>投稿内容</span>
-        <textarea name="message" placeholder="150字以内" onkeyup="ShowLength(value);">{{old('message')}}</textarea>
+        <textarea name="message" placeholder="500字以内" onkeyup="ShowLength(value);">{{old('message')}}</textarea>
         <p id="inputlength">0文字</p>
         @if ($errors->has('message'))
           <p style="color: red">{{$errors->first('message')}}</p>

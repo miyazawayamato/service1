@@ -10,17 +10,19 @@
       <form action="{{route('postform')}}" method="post">
       @csrf
       <input type="hidden" value="{{$user->id}}" name="user_id">
+      
         <div class="box">
           <span>投稿者ネーム</span>
           <input type="text" value="{{$user->name}}" disabled>
         </div>
+        
         <div class="box">
           <span>受験した資格</span>
           <select name="qualification_id" class="box-selection" value="{{ old('qualification_id') }}">
             <option value=""></option>
-            <option value="1">司法書士</option>
-            <option value="2">行政書士</option>
-            <option value="3">税理士</option>
+            @foreach($qualis as $quali)
+             <option value="{{$quali->id}}">{{$quali->certificate}}</option>
+            @endforeach
           </select>
           @if ($errors->has('qualification_id'))
             <p style="color: red">{{$errors->first('qualification_id')}}</p>
@@ -30,76 +32,92 @@
           <span>勉強期間</span>
           <select name="period" class="box-selection" value="{{ old('period') }}">
             <option value=""></option>
-            <option>1年未満</option>
-            <option>１～2年</option>
-            <option>3年</option>
+            <option>3ヶ月未満</option>
+            <option>3ヶ月～半年</option>
+            <option>半年～1年</option>
+            <option>1年～2年</option>
+            <option>2年～5年</option>
+            <option>5年以上</option>
           </select>
           @if ($errors->has('period'))
             <p style="color: red">{{$errors->first('period')}}</p>
           @endif
         </div>
+        
         <div class="box">
-          <span>何年度</span>
+          <span>何年に受けたか</span>
           <select name="time" class="box-selection"  value="{{ old('time') }}">
             <option></option>
-            <option>2020</option>
-            <option>2019</option>
-            <option>2018</option>
+            @for($i = 2020; $i >= 2000; $i--)
+              <option>{{$i}}年</option>
+            @endfor
+            <option>1999以前</option>
           </select>
           @if ($errors->has('time'))
             <p style="color: red">{{$errors->first('time')}}</p>
           @endif
         </div>
+        
         <div class="box">
           <span>受験回数</span>
           <select name="how" class="box-selection"  value="{{ old('how') }}">
             <option></option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            @for($i = 1; $i <= 5; $i++)
+              <option>{{$i}}回</option>
+            @endfor
+            <option>6回以上</option>
           </select>
           @if ($errors->has('how'))
             <p style="color: red">{{$errors->first('how')}}</p>
           @endif
         </div>
+        
         <div class="box">
           <span>当時の職業</span>
           <select name="profession" class="box-selection" value="{{ old('profession') }}">
             <option></option>
-            <option>資格に</option>
-            <option>ショシ</option>
-            <option>しょし</option>
+            <option>資格に関係のある仕事</option>
+            <option>資格に関係のない仕事</option>
+            <option>資格に少し関りのある仕事</option>
+            <option>学生</option>
+            <option>働いていなかった</option>
+            <option>無回答/どれにも当てはまらない</option>
           </select>
           @if ($errors->has('profession'))
             <p style="color: red">{{$errors->first('profession')}}</p>
           @endif
         </div>
+        
         <div class="box">
           <p>受験の目的</p>
-          <textarea name="purpose" class="box-selection">{{ old('purpose') }}</textarea>
+          <textarea name="purpose" class="box-selection btn purpose" placeholder="70字以内">{{ old('purpose') }}</textarea>
           @if ($errors->has('purpose'))
             <p style="color: red">{{$errors->first('purpose')}}</p>
           @endif
         </div>
+        
         <div class="box">
           <p>教材・スクール等</p>
-          <textarea name="material" class="box-selection" onkeyup="Length(value);">{{ old('material') }}</textarea>
+          <textarea name="material" class="box-selection btn material" onkeyup="Length(value);" placeholder="500字以内">{{ old('material') }}</textarea>
           <p id="counter">0文字</p>
           @if ($errors->has('material'))
             <p style="color: red">{{$errors->first('material')}}</p>
           @endif
         </div>
+        
         <div class="box">
           <p>勉強手順・注意した点</p>
-          <textarea name="body" maxlength="文字数" class="box-selection" onkeyup="ShowLength(value);">{{ old('body') }}</textarea>
+          <textarea name="body" maxlength="文字数" class="box-selection btn body" onkeyup="ShowLength(value);" placeholder="1500字以内">{{ old('body') }}</textarea>
           <p id="inputlength">0文字</p>
           @if ($errors->has('body'))
             <p style="color: red">{{$errors->first('body')}}</p>
           @endif
         </div>
+        
         <div class="post-btn">
             <button type="submit">投稿</button>
         </div>
+        
       </form>
     </div>
   <script src="{{ asset('js/postcount.js') }}"></script>

@@ -78,15 +78,18 @@ Route::get('/contact',[ContactController::class, 'form'])->name('contact');
 Route::post('/contact/done',[ContactController::class, 'send'])->name('contact.send');
 
 //認証機能 マイページへ
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[MypageController::class, 'show'])->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/dashboard',[MypageController::class, 'show'])->name('dashboard');
+    //編集ページ
+    Route::get('/dashboard/edit/{id}',[MypageController::class, 'edit'])->name('edit');
+    //編集実行メソッド
+    Route::post('/dashboard/edit/{id}/update',[MypageController::class, 'update'])->name('edit.update');
+    //削除
+    Route::post('/dashboard/edit/{id}/delete',[MypageController::class, 'delete'])->name('edit.delete');
+});
+
+
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
-
-//編集ページ
-Route::get('/dashboard/edit/{id}',[MypageController::class, 'edit'])->name('edit');
-//編集実行メソッド
-Route::post('/dashboard/edit/{id}/update',[MypageController::class, 'update'])->name('edit.update');
-//削除
-Route::post('/dashboard/edit/{id}/delete',[MypageController::class, 'delete'])->name('edit.delete');

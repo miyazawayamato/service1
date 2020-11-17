@@ -26,7 +26,7 @@ class BoardPost extends FormRequest
         return [
             //
             'name' => 'required',
-            'message' => 'required|max:150',
+            'message' => 'required|max:500',
         ];
     }
     // エラーメッセージ

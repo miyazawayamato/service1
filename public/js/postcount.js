@@ -6,7 +6,7 @@ function Length( str ) {
     
     counter.innerHTML = str.length + "文字";
     
-    if(str.length > 150) {
+    if(str.length > 500) {
         counter.style.color = 'red';
     } else {
         counter.style.color = 'black';
@@ -18,7 +18,7 @@ function ShowLength( str ) {
     
     counter.innerHTML = str.length + "文字";
     
-    if(str.length > 200) {
+    if(str.length > 1500) {
         counter.style.color = 'red';
     } else {
         counter.style.color = 'black';
