@@ -16,14 +16,4 @@ class QualificationController extends Controller
         return view('qualis', ['qualis' => $qualis]);
     }
     
-    
-    //個別表示 たぶんいらない
-    public function Individual($id) {
-        
-        $quali = Qualification::find($id);
-        
-        // return view('quali', compact('quali'));
-        return view('quali', ['quali' => $quali, 'id' => $id]);
-        
-    }
 }

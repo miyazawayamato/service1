@@ -54,9 +54,6 @@ Route::get('/exp/unlike/{id}', [ExpLikesController::class, 'unlike'])->name('exp
 //資格一覧
 Route::get('/qualifications',[QualificationController::class, 'show'])->name('qualis');
 
-//資格個別 多分いらない気がする・・・
-Route::get('/qualification/{id}',[QualificationController::class,'Individual'])->name('quali');
-
 //体験談
 Route::get('/experiences',[ExperienceController::class, 'Reports'])->name('reports');
 //体験談個別一覧
