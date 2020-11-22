@@ -17,7 +17,7 @@ class CreateBoards extends Migration
             $table->id();
             $table->foreignId('qualification_id')->constrained();
             $table->string('name');
-            $table->text('message');
+            $table->string('message');
             $table->timestamps();
         });
     }

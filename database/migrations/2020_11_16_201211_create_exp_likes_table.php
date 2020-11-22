@@ -15,8 +15,8 @@ class CreateExpLikesTable extends Migration
     {
         Schema::create('exp_likes', function (Blueprint $table) {
             $table->bigIncrements('like_id');
-            $table->integer('experience_id')->unsigned();
-            $table->integer('user_id')->unsigned();
+            $table->foreignId('experience_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

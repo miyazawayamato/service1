@@ -15,7 +15,11 @@ class CreateQualificationsTable extends Migration
     {
         Schema::create('qualifications', function (Blueprint $table) {
             $table->id();
-            $table->string('certificate');
+            $table->string('certificate')->nullable();
+            $table->string('body')->nullable();
+            $table->string('time')->nullable();
+            $table->string('passrate')->nullable();
+            $table->string('class')->nullable();
             $table->timestamps();
         });
     }

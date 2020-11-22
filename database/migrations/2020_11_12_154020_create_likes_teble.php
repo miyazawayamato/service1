@@ -13,10 +13,10 @@ class CreateLikesTeble extends Migration
      */
     public function up()
     {
-        Schema::create('likes_teble', function (Blueprint $table) {
+        Schema::create('likes', function (Blueprint $table) {
             $table->bigIncrements('like_id');
-            $table->integer('board_id')->unsigned();
-            $table->integer('user_id')->unsigned();
+            $table->foreignId('board_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

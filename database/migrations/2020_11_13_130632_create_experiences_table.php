@@ -15,10 +15,8 @@ class CreateExperiencesTable extends Migration
     {
         Schema::create('experiences', function (Blueprint $table) {
             $table->id();//主キー
-            //userキー
-            $table->foreignId('user_id')->constrained();
-            //qualiキー
-            $table->foreignId('qualification_id')->constrained();
+            $table->foreignId('user_id')->constrained();//userキー
+            $table->foreignId('qualification_id')->constrained();//qualiキー
             $table->string('period');//期間
             $table->string('time');//いつ
             $table->string('how');//何回
