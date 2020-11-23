@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLikesTeble extends Migration
+class CreateLikes extends Migration
 {
     /**
      * Run the migrations.
@@ -28,6 +28,6 @@ class CreateLikesTeble extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('likes_teble');
+        Schema::dropIfExists('likes');
     }
 }
