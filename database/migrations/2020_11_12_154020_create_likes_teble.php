@@ -15,8 +15,8 @@ class CreateLikesTeble extends Migration
     {
         Schema::create('likes', function (Blueprint $table) {
             $table->bigIncrements('like_id');
-            $table->foreignId('board_id')->constrained();
             $table->foreignId('user_id')->constrained();
+            $table->foreignId('board_id')->constrained();
             $table->timestamps();
         });
     }
