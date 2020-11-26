@@ -34,7 +34,9 @@ class ContactController extends Controller
         //bladeのbuttonに属性追加
         if($action === 'submit') {
             // メール送信
-            Mail::to($input['email'])->send(new ContactMail($input));
+            //toに送信
+            // Mail::to($input['email'])->send(new ContactMail($input));
+            Mail::to('official@dokusika.deca.jp')->send(new ContactMail($input));
             $request->session()->regenerateToken();
             return view('trial');
         } else {
