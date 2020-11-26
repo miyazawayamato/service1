@@ -13,17 +13,18 @@ class ContactMail extends Mailable
     //注文インスタンス
     private $name;
     private $body;
+    private $email;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($inputs)
+    public function __construct($input)
     {
         //新しいメッセージインスタンスの生成
-        $this->email = $inputs['email'];
-        $this->name = $inputs['name'];
-        $this->body  = $inputs['body'];
+        $this->email = $input['email'];
+        $this->name = $input['name'];
+        $this->body  = $input['body'];
     }
 
     /**
@@ -34,8 +35,13 @@ class ContactMail extends Mailable
     public function build()
     {
         // return $this->view('view.name');
-        return $this->from('bmiyazawayamato@gmail.com')
+        return $this->from('official@dokusika.deca.jp')
                     ->subject('自動送信メール')
-                    ->view('emails.mail');
+                    ->view('emails.mail')
+                    ->with([
+                        'email' => $this->email,
+                        'name' => $this->name,
+                        'body'  => $this->body,
+                    ]);
     }
 }

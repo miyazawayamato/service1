@@ -71,6 +71,8 @@ Route::get('/article',[ArticleController::class, 'show'])->name('article');
 
 //お問い合わせ
 Route::get('/contact',[ContactController::class, 'form'])->name('contact');
+//確認画面
+Route::post('/contact/confirm',[ContactController::class, 'confirm'])->name('confirm');
 //送信
 Route::post('/contact/done',[ContactController::class, 'send'])->name('contact.send');
 

@@ -6,7 +6,7 @@
 
 @section('main')
     <h2 class="contact-tittle">お問い合わせ</h2>
-    <form method="POST" action="{{ route('contact.send') }}">
+    <form method="POST" action="{{ route('confirm') }}">
         @csrf
         
         <p class="item">内容の種類</p>
@@ -31,6 +31,6 @@
         @if ($errors->has('body'))
             <p style="color: red">{{$errors->first('body')}}</p>
         @endif
-        <button>送信</button>
+        <button>確認画面へ</button>
     </form>
 @endsection

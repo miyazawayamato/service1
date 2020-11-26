@@ -16,34 +16,35 @@ class ContactController extends Controller
         return view('contact');
     }
     
-    //送信メソッド
-    public function send(Contact $request) {
-        //バリデーションを実行
+    //確認画面
+    public function confirm(Contact $request) {
         $validated = $request->validated();
-        //フォームから受け取ったactionの値を取得
-        // $action = $request->input('action');
         
-        //フォームから受け取ったactionを除いたinputの値を取得
-        $inputs = $request->except('action');
-
-        // //actionの値で分岐
-        // if($action !== 'submit'){
-        //     // return redirect()
-        //     //     ->route('contact')
-        //     //     ->withInput($inputs);
-        //     return view('home');
-
-        // } else {
-            //入力されたメールアドレスにメールを送信
-        Mail::to($inputs['email'])->send(new ContactMail($inputs));
+        $inputs = $request->all();
+        
+        return view('contactconfirm', ['inputs' => $inputs]);
+    }
+    
+    //送信メソッド
+    public function send(Request $request) {
+        
+        $action = $request->input('action');
+        $input  = $request->except('action');
+        
+        //bladeのbuttonに属性追加
+        if($action === 'submit') {
+            // メール送信
+            Mail::to($input['email'])->send(new ContactMail($input));
+            $request->session()->regenerateToken();
+            return view('trial');
+        } else {
+            return view('home');
+        }
         
         
         
         //再送信を防ぐためにトークンを再発行
         $request->session()->regenerateToken();
-        
-        
-        
         //送信完了ページのviewを表示
         return view('trial');
             
