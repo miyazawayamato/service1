@@ -32,11 +32,10 @@ class ContactMail extends Mailable
      *
      * @return $this
      */
-    public function build($input)
+    public function build()
     {
         //fromから送信する この際のアドレスはどうでもいい
-        return $this->from($input['email'])
-        // return $this->from('official@dokusika.deca.jp')
+        return $this->from('official@dokusika.deca.jp')
                     ->subject('自動送信メール')
                     ->view('emails.mail')
                     ->with([
