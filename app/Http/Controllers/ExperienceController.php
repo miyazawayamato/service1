@@ -35,6 +35,8 @@ class ExperienceController extends Controller
     //個別
     public function show($id, $qualiexp_id) {
         
+        //改善できそう?
+        
         $texts = Experience::find($qualiexp_id);
         //$textsでカラムを取得しー＞でuseridを取得
         $userid = $texts->user_id;

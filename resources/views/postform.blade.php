@@ -1,5 +1,5 @@
 @extends('common.main')
-@section('title', 'ホーム')
+@section('title', 'ドクシカ/投稿フォーム')
 @section('stylesheet')
   <link rel="stylesheet" href="{{ asset('css/postform/postform.css') }}"/>
 @endsection

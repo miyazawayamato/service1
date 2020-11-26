@@ -1,5 +1,5 @@
 @extends('common.main')
-@section('title', 'ホーム')
+@section('title', 'ドクシカ/資格取得のための合格者の体験談や掲示板サイト')
 @section('stylesheet')
     <link rel="stylesheet" href="{{ asset('css/home.css') }}"/>
 @endsection

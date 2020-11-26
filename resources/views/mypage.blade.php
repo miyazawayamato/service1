@@ -1,5 +1,5 @@
 @extends('common.main')
-@section('title', 'ホーム')
+@section('title', 'ドクシカ/マイページ')
 @section('stylesheet')
 <link rel="stylesheet" href="{{ asset('css/trial.css') }}"/>
 @endsection

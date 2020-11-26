@@ -1,5 +1,5 @@
 @extends('common.main')
-@section('title', '掲示板')
+@section('title', 'ドクシカ/掲示板/'.$quali->certificate)
 @section('stylesheet')
 <link rel="stylesheet" href="{{ asset('css/board/board.css') }}"/>
 <link rel="stylesheet" href="{{ asset('css/quali/quali.css') }}"/>

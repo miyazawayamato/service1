@@ -1,5 +1,5 @@
 @extends('common.main')
-@section('title', '受験レポート')
+@section('title', 'ドクシカ/受験レポート')
 @section('stylesheet')
 <link rel="stylesheet" href="{{ asset('css/experience/experience.css') }}"/>
 @endsection
@@ -8,7 +8,7 @@
     <h3>経験レポート</h3>
     <div class="report">
         <div class="report-top">
-            <p class="type">資格書士</p>
+            <p class="type">{{$texts->qualification->certificate}}</p>
             <div class="time-like">
                 <span class="time">更新日　{{$texts->created_at->format('Y/m/d')}}</span>
                 {{-- <span class="like"><i class="fas fa-check"></i>役立ち23</span> --}}

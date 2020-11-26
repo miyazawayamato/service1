@@ -1,5 +1,5 @@
 @extends('common.main')
-@section('title', '体験談一覧')
+@section('title', 'ドクシカ/受験レポート一覧/'.$quali->certificate)
 @section('stylesheet')
 <link rel="stylesheet" href="{{ asset('css/experiences/experiences.css') }}"/>
 <link rel="stylesheet" href="{{ asset('css/quali/quali.css') }}"/>

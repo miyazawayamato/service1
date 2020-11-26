@@ -31,7 +31,13 @@ if (file_exists(__DIR__.'/../storage/framework/maintenance.php')) {
 |
 */
 
-require __DIR__.'/../service1/vendor/autoload.php';
+// 開発用
+require __DIR__.'/../vendor/autoload.php';
+$app = require_once __DIR__.'/../bootstrap/app.php';
+
+//本番環境
+// require __DIR__.'/../service1/vendor/autoload.php';
+// $app = require_once __DIR__.'/../service1/bootstrap/app.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +50,6 @@ require __DIR__.'/../service1/vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../service1/bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
 

@@ -1,5 +1,5 @@
 @extends('common.main')
-@section('title', 'お問い合わせ')
+@section('title', 'ドクシカ/お問い合わせ')
 @section('stylesheet')
 <link rel="stylesheet" href="{{ asset('css/contact/contact.css') }}"/>
 @endsection
