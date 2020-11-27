@@ -226,6 +226,11 @@ footer {
   padding-top: 35px;
 }
 
+.notice {
+  margin-bottom: 30px;
+  opacity: 0.5;
+}
+
 .foot-logo {
   font-size: 30px;
   color: #32CBC8;
@@ -235,6 +240,7 @@ footer {
   display: inline-block;
   color: black;
   margin-top: 15px;
+  font-weight: bold;
 }
 
 .copyright {

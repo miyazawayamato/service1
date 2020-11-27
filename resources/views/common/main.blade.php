@@ -52,7 +52,7 @@
                 <div class="rank">
                     <h3>ランキング</h3>
                     <div class="ranking">
-                        <ul>
+                        {{-- <ul>
                             <li>
                                 <a href="">１、資格資格</a>
                             </li>
@@ -68,7 +68,7 @@
                             <li>
                                 <a href="">５、資格資格</a>
                             </li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
                 <a href="#" class="ad"></a>
@@ -100,6 +100,10 @@
     <footer>
         <div class="transe"></div>
         <div class="foot">
+            <div class="notice">
+                <p>試験日は例年のものになります。コロナウイルスの関係で延期になっているものもあります</p>
+                <p>合格率は試験ごとに算出法が違うので、大体の目安になります</p>
+            </div>
             <h3 class="foot-logo">ドクシカ</h3>
             <a href="{{route('contact')}}" class="foot-form">お問い合わせ/ご意見・ご要望フォーム</a>
         </div>

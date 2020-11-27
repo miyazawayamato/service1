@@ -36,7 +36,7 @@ class ContactMail extends Mailable
     {
         //fromから送信する この際のアドレスはどうでもいい
         return $this->from('official@dokusika.deca.jp')
-                    ->subject('自動送信メール')
+                    ->subject('お問い合わせメール')
                     ->view('emails.mail')
                     ->with([
                         'email' => $this->email,

@@ -25,7 +25,7 @@
     <input id="acd-check1" class="acd-check" type="checkbox">
     <label class="acd-label" for="acd-check1">詳しい情報</label>
       <div class="acd-content">
-        <p>今後の情報追加をお待ちください。</p>
+        <p>今後の追加をお待ちください。</p>
       </div>
   </div>  
   <div class="switch-menu">
