@@ -14,7 +14,7 @@
         <div class="header-main">
             <div class="header-top">
                 <a href="{{route('home')}}" class="fon-top"><h1 class="header-logo">ドクシカ</h1></a>
-                <p class="sub-logo">資格取得を助けるサイト</p>
+                <p class="sub-logo">-資格取得を助けるサイト-</p>
                 <span class="login fon-top">
                     @if (Route::has('login'))
                         @auth
