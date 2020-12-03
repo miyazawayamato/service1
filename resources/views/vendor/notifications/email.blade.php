@@ -44,7 +44,8 @@
 {{ $salutation }}
 @else
 ご利用ありがとうございました！<br>
-{{ config('app.name') }}
+{{-- {{ config('app.name') }} --}}
+@lang('ドクシカ')
 @endif
 
 {{-- Subcopy --}}
