@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     @yield('stylesheet')
     <script src="https://kit.fontawesome.com/0e958c0ed0.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon-32x32.png') }}">
     <title>@yield('title')</title>
 </head>
 <body>

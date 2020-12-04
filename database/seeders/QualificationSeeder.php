@@ -121,6 +121,38 @@ class QualificationSeeder extends Seeder
         ]);
         $inst->save();
         
+        $inst = new Qualification([
+            'certificate' => '日商簿記1級',
+            'time' => '6月/11月',
+            'passrate' => '9%前後',
+            'class' => '経理'
+            ]);
+        $inst->save();
+        
+        $inst = new Qualification([
+            'certificate' => '日商簿記2級',
+            'time' => '2月/6月/11月',
+            'passrate' => '約12%～28%',
+            'class' => '経理'
+        ]);
+        $inst->save();
+        
+        $inst = new Qualification([
+            'certificate' => '日商簿記3級',
+            'time' => '2月/6月/11月',
+            'passrate' => '50%前後',
+            'class' => '経理'
+        ]);
+        $inst->save();
+        
+        $inst = new Qualification([
+            'certificate' => '日商簿記初級(旧4級)',
+            'time' => '随時',
+            'passrate' => '55%前後',
+            'class' => '経理'
+        ]);
+        $inst->save();
+        
         //it関係
         $inst = new Qualification([
             'certificate' => 'itパスポート',

@@ -70,16 +70,21 @@ section {
 }
 
 .comment-main {
-  margin-bottom: 0.8em;
+  white-space: pre-line;
 }
 
 .comment-main p {
-  line-height: 1.6;
+  line-height: 1.4;
   letter-spacing: 0.7px;
 }
 
 .comment-under {
   text-align: right;
+  height: 100%;
+}
+
+.reply {
+  cursor: pointer;
 }
 
 .like {

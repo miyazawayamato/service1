@@ -28,7 +28,7 @@
         <p>今後の追加をお待ちください。</p>
       </div>
   </div>  
-  <div class="switch-menu">
+  <div class="switch-menu" id="stan">
     <a href="{{route('experiences', [$id])}}" class="switch" >体験談一覧</a>
     <a href="#">掲示板へ</a>
   </div>
@@ -46,7 +46,7 @@
       </div>
       <div class="form-text">
         <span>投稿内容</span>
-        <textarea name="message" placeholder="500字以内" onkeyup="ShowLength(value);">{{old('message')}}</textarea>
+        <textarea id="area" name="message" placeholder="500字以内" onkeyup="ShowLength(value);">{{old('message')}}</textarea>
         <p id="inputlength">0文字</p>
         @if ($errors->has('message'))
           <p style="color: red">{{$errors->first('message')}}</p>
@@ -73,17 +73,16 @@
               <span>@php echo $counter++; @endphp</span>
               <span class="name">{{$comment->name}}</span>
               <div class="comment-info">
-                <time>{{$comment->created_at->format('Y/n/d-H時i分')}}</time>
-                {{-- <span class="report">報告する</span> --}}
+                <time>{{$comment->created_at->format('n/d-H:i')}}</time>
               </div>
             </div>
             <div class="comment-main">
               <p>{{$comment->message}}</p>
             </div>
             <div class="comment-under">
-              {{-- <span><i class="fas fa-check"></i>役立ち</span> --}}
             </div>
             <div class="comment-under">
+              <span class="reply like"><i class="fas fa-reply"></i>返信</span>
               @if($comment->is_liked_by_auth_user())
                 <a href="{{ route('reply.unlike', ['id' => $comment->id]) }}" class="like"><i class="fas fa-check"></i>役立ち<span>{{ $comment->likes->count() }}</span></a>
               @else
@@ -99,5 +98,6 @@
       </div>
     </div>
   </div>
+  <script src="{{ asset('js/reply.js') }}"></script>
   <script src="{{ asset('js/count.js') }}"></script>
 @endsection
