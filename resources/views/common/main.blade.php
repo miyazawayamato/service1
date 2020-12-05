@@ -35,7 +35,7 @@
                         <li><a href="{{route('qualis')}}">資格一覧</a></li>
                         <li><a href="trial">体験談一覧</a></li>
                         <li><a href="trial">掲示板一覧</a></li>
-                        <li><a href="{{route('postform')}}">投稿する</a></li>
+                        <li><a href="{{route('postselect')}}">投稿する</a></li>
                         <li><a href="{{route('article')}}">コラム</a></li>
                     </ul>
                 </nav>
@@ -89,7 +89,7 @@
                         <a href="{{route('article')}}">コラム</a>
                     </li>
                     <li>
-                        <a href="{{route('postform')}}">投稿する</a>
+                        <a href="{{route('postselect')}}">投稿する</a>
                     </li>
                 </ul>
                 </div>

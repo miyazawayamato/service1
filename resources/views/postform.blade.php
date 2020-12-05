@@ -15,23 +15,16 @@
           <span>投稿者ネーム</span>
           <input type="text" value="{{$user->name}}" disabled>
         </div>
-        
         <div class="box">
           <span>受験した資格</span>
-          <select name="qualification_id" class="box-selection" value="{{ old('qualification_id') }}">
-            <option value=""></option>
-            @foreach($qualis as $quali)
-             <option value="{{$quali->id}}">{{$quali->certificate}}</option>
-            @endforeach
-          </select>
-          @if ($errors->has('qualification_id'))
-            <p style="color: red">{{$errors->first('qualification_id')}}</p>
-          @endif
+          <input type="hidden" value="{{$quali->id}}" name="qualification_id">
+          <input type="text" value="{{$quali->certificate}}" disabled>
         </div>
+        
         <div class="box">
           <span>勉強期間</span>
-          <select name="period" class="box-selection" value="{{ old('period') }}">
-            <option value=""></option>
+          <select name="period" class="box-selection">
+            <option>{{ old('period') }}</option>
             <option>3ヶ月未満</option>
             <option>3ヶ月～半年</option>
             <option>半年～1年</option>
@@ -46,8 +39,8 @@
         
         <div class="box">
           <span>何年に受けたか</span>
-          <select name="time" class="box-selection"  value="{{ old('time') }}">
-            <option></option>
+          <select name="time" class="box-selection">
+            <option>{{ old('time') }}</option>
             @for($i = 2020; $i >= 2000; $i--)
               <option>{{$i}}年</option>
             @endfor
@@ -60,8 +53,8 @@
         
         <div class="box">
           <span>受験回数</span>
-          <select name="how" class="box-selection"  value="{{ old('how') }}">
-            <option></option>
+          <select name="how" class="box-selection">
+            <option>{{ old('how') }}</option>
             @for($i = 1; $i <= 5; $i++)
               <option>{{$i}}回</option>
             @endfor
@@ -74,8 +67,8 @@
         
         <div class="box">
           <span>当時の職業</span>
-          <select name="profession" class="box-selection" value="{{ old('profession') }}">
-            <option></option>
+          <select name="profession" class="box-selection">
+            <option>{{ old('profession') }}</option>
             <option>資格に関係のある仕事</option>
             <option>資格に関係のない仕事</option>
             <option>資格に少し関りのある仕事</option>

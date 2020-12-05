@@ -14,7 +14,7 @@ class QualificationSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //法律
         $inst = new Qualification([
             'certificate' => '司法書士',
             'time' => '7月の第1日曜日',

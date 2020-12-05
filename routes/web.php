@@ -63,6 +63,8 @@ Route::get('/experience/{id}/{qualiexp_id}',[ExperienceController::class, 'show'
 
 //体験談投稿ページ
 Route::get('/postform',[PostformController::class, 'postform'])->name('postform');
+//資格選択ページ
+Route::get('/postselect',[PostformController::class, 'select'])->name('postselect');
 //体験談投稿する
 Route::post('/postform',[PostformController::class, 'posting'])->name('postform');
 

@@ -14,14 +14,20 @@ use Illuminate\Support\Facades\Auth;
 class PostformController extends Controller
 {
     //投稿画面表示
-    public function postform() {
+    public function postform(Request $request) {
+        $id = $request->id;
+        $quali = Qualification::find($id);
         
-        $id = Auth::id();
-        $user = User::find($id);
+        $user_id = Auth::id();
+        $user = User::find($user_id);
         
+        return view('postform',['user' => $user, 'quali' => $quali]);
+    }
+    
+    //資格選択
+    public function select() {
         $qualis = Qualification::all();
-        
-        return view('postform',['user' => $user, 'qualis' => $qualis]);
+        return view('qselect', ['qualis' => $qualis]);
     }
     
     //投稿メソッド

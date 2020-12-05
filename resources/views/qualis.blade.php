@@ -14,7 +14,7 @@
           <span class="quali">{{$quali->certificate}}</span>
           <a href="{{route('board', ['id' => $quali->id])}}" class="board-root">資格資格掲示板へ</a>
           <a href="{{route('experiences', ['id' => $quali->id])}}" class="exp-root">資格資格体験談へ</a>
-          <a href="{{route('postform')}}" class="post-roof">投稿する</a>
+          <a href="{{route('postform', ['id' => $quali->id])}}" class="post-roof">投稿する</a>
         </li>
         @endforeach
       </ul>
