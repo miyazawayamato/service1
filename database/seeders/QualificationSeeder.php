@@ -65,7 +65,7 @@ class QualificationSeeder extends Seeder
 
         $inst = new Qualification([
             'certificate' => '弁理士',
-            'time' => '一次5月中旬～下旬・二次6月下旬～7月上旬',
+            'time' => '短答5月・筆記6～7月・口述10月',
             'passrate' => '6～8%',
             'class' => '法律'
         ]);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Qualification;
 use App\Models\Experience;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PostForm;
 
@@ -12,20 +13,20 @@ class MypageController extends Controller
 {
     //mypage 
     public function show() {
-        
         $user = Auth::user();
-        
-        
         $id = Auth::id();
         // $posts = User::find($id)->experiences;
-        
         $posts = Experience::where('user_id', $id)->get();
         
         return view('mypage',[ 'user' => $user, 'posts' => $posts]);
     }
     
     //編集ページ
-    public function edit($id) {
+    public function edit(Request $request) {
+        $request->validate([
+            'id' => 'integer',
+        ]);
+        $id = $request->id;
         $exp = Experience::find($id);
         $qualis = Qualification::all();
         if($exp->user_id == Auth::id()) {
@@ -40,7 +41,6 @@ class MypageController extends Controller
         
         
         if($uppost->user_id == Auth::id()) {
-            $uppost->qualification_id = $request->qualification_id;
             $uppost->period = $request->period;
             $uppost->time = $request->time;
             $uppost->how = $request->how;
@@ -54,15 +54,29 @@ class MypageController extends Controller
             return redirect()->back();
         }
     }
-    
-    public function delete($id) {
+    //投稿削除
+    public function delete(Request $request) {
+        $id = $request->id;
         $post = Experience::findOrFail($id);//取得
-        
         if($post->user_id == Auth::id()) {
-        Experience::destroy($post);//削除
-        return redirect('/mypage');//リダイレクト
+            Experience::destroy($post->id);//削除
+            return redirect()->route('dashboard');//リダイレクト
         } else {
             return redirect()->back();
         }
     }
+    
+    //名前変更
+    public function name(Request $request) {
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $id = Auth::id();
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->save();
+        
+        return redirect()->route('dashboard');//リダイレクト
+    }
+    
 }

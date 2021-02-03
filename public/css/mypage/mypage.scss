@@ -1,0 +1,45 @@
+.pagetop {
+    margin-top: 30px;
+    font-size: 30px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid;
+}
+
+.name {
+    display: flex;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    p {
+        margin-right: 10px;
+    }
+}
+
+table {
+    font-size: 25px;
+    border: 1px solid black;
+    margin-top: 20px;
+    width: 50%;
+    th {
+        padding: 8px 0;
+        border-bottom: 1px solid;
+        border-right: 1px solid;
+    }
+    td {
+        padding: 8px 0;
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+    }
+}
+
+.rbring {
+    text-align: right;
+}
+
+.cbring {
+    text-align: center;
+}
+
+.logout {
+    margin-top: 20px;
+}

@@ -13,7 +13,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
 
-class User extends Authenticatable implements MustVerifyEmail //im～mailまで追加 認証のため
+class User extends Authenticatable //implements MustVerifyEmail //im～mailまで追加 認証のため
 {
     use HasApiTokens;
     use HasFactory;

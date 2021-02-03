@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
     @yield('stylesheet')
     <script src="https://kit.fontawesome.com/0e958c0ed0.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon-32x32.png') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
 </head>
 <body>
@@ -44,6 +45,7 @@
     </header>
     <div class="transe"></div>
     <div class="main-back">
+        
         <div class="main">
             <div class="left">
                 @yield('main')

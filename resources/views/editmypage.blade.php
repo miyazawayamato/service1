@@ -9,25 +9,14 @@
     <div class="posting">
     <form action="{{route('edit.update',['id' => $exp->id])}}" method="post">
         @csrf
-    {{-- <input type="hidden" value="{{$user->id}}" name="user_id"> --}}
         <div class="box">
-        <span>投稿者ネーム</span>
-        <input type="text" value="{{$exp->user->name}}" disabled>
+            <span>投稿者ネーム</span>
+            <span>{{$exp->user->name}}</span>
         </div>
         
         <div class="box">
-        <span>受験した資格</span>
-        <select name="qualification_id" class="box-selection">
-            {{-- バリデーションold --}}
-            <option value="{{$exp->qualification_id}}" class="selected"></option>
-            @foreach($qualis as $quali)
-             <option value="{{$quali->id}}">{{$quali->certificate}}</option>
-            @endforeach
-        </select>
-        @if ($errors->has('qualification_id'))
-            <p style="color: red">{{$errors->first('qualification_id')}}</p>
-        @endif
-        <p class="must">この項目のみ必ず再入力が必要です</p>
+            <span>受験した資格</span>
+            <span>{{$exp->qualification->certificate}}</span>
         </div>
         
         <div class="box">

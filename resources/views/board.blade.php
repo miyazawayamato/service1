@@ -34,9 +34,10 @@
   </div>
   <div class="article-top">
     <p class="board-form-tittle">投稿フォーム</p>
+    
     <form action="{{route('boardadd')}}" method="post">
     @csrf
-    <input type="hidden" name="qualification_id" value="{{$id}}">
+      <input type="hidden" name="qualification_id" value="{{$id}}">
       <div class="nickname">
         <span>ニックネーム</span>
         <input type="text" name="name" value="{{old('name')}}" placeholder="10字以内">
@@ -56,6 +57,7 @@
         <button type="submit">投稿</button>
       </div>
     </form>
+    
   </div>
   <div class="article-main">
     <div class="article">

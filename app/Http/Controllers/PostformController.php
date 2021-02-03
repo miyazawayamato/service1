@@ -17,10 +17,8 @@ class PostformController extends Controller
     public function postform(Request $request) {
         $id = $request->id;
         $quali = Qualification::find($id);
-        
         $user_id = Auth::id();
         $user = User::find($user_id);
-        
         return view('postform',['user' => $user, 'quali' => $quali]);
     }
     
@@ -32,11 +30,24 @@ class PostformController extends Controller
     
     //投稿メソッド
     public function posting(PostForm $request) {
-        $validated = $request->validated();
-        $inputs = $request->all();//取得
-        Experience::create($inputs);//追加
+        $request->validated();
+        
+        //ユーザーid取得 それぞれを入れるメソッド
+        
+        Experience::create([
+            'user_id' => Auth::id(),
+            'qualification_id' => $request->qualification_id,
+            'period' => $request->period,
+            'time' => $request->time,
+            'how' => $request->how,
+            'profession' => $request->profession,
+            'purpose' => $request->purpose,
+            'material' => $request->material,
+            'body' => $request->body,
+        ]);//追加
+        
         return view('trial');
-        // return view('experience', [$id]);
+
     }
     
 }

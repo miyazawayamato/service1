@@ -9,7 +9,8 @@
     <div class="posting">
       <form action="{{route('postform')}}" method="post">
       @csrf
-      <input type="hidden" value="{{$user->id}}" name="user_id">
+      {{-- ここに記述しないほうがいい --}}
+      {{-- <input type="hidden" value="{{$user->id}}" name="user_id"> --}}
       
         <div class="box">
           <span>投稿者ネーム</span>

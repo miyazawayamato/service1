@@ -82,15 +82,11 @@ Route::post('/contact/done',[ContactController::class, 'send'])->name('contact.s
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard',[MypageController::class, 'show'])->name('dashboard');
     //編集ページ
-    Route::get('/dashboard/edit/{id}',[MypageController::class, 'edit'])->name('edit');
+    Route::post('/dashboard/edit',[MypageController::class, 'edit'])->name('edit');
     //編集実行メソッド
     Route::post('/dashboard/edit/{id}/update',[MypageController::class, 'update'])->name('edit.update');
-    //削除
-    Route::post('/dashboard/edit/{id}/delete',[MypageController::class, 'delete'])->name('edit.delete');
+    //投稿削除
+    Route::post('/dashboard/edit/delete',[MypageController::class, 'delete'])->name('edit.delete');
+    //ユーザーネーム変更
+    Route::post('/dashboard/edit/name',[MypageController::class, 'name'])->name('edit.name');
 });
-
-
-
-// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//     return view('dashboard');
-// })->name('dashboard');

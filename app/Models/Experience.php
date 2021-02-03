@@ -16,6 +16,7 @@ class Experience extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+    
     public function qualification()
     {
         return $this->belongsTo('App\Models\Qualification');

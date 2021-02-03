@@ -22,6 +22,27 @@ class AssaySeeder extends Seeder
             'class' => '漢検'
         ]);
         $inst->save();
+        $inst = new Qualification([
+            'certificate' => '英語検定',
+            'time' => '2月6月10月',
+            'passrate' => '約4%',
+            'class' => '漢検'
+        ]);
+        $inst->save();
+        $inst = new Qualification([
+            'certificate' => '中国語検定',
+            'time' => '2月6月10月',
+            'passrate' => '約4%',
+            'class' => '漢検'
+        ]);
+        $inst->save();
+        $inst = new Qualification([
+            'certificate' => '数学検定',
+            'time' => '2月6月10月',
+            'passrate' => '約4%',
+            'class' => '漢検'
+        ]);
+        $inst->save();
         //toeic
         // $inst = new Qualification([
         //     'certificate' => 'TOEIC',

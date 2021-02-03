@@ -6,8 +6,7 @@ use App\Http\Requests\BoardPost;//バリデーション
 use Illuminate\Http\Request;
 use App\Models\Qualification;
 
-use App\Models\SihousyosiBoard;
-use App\Models\GyouseisyosiBoard;
+
 use App\Models\Board;
 use App\Models\User;
 
@@ -26,10 +25,11 @@ class BoardController extends Controller
     
     //追加処理
     public function add(BoardPost $request) {
-        $validated = $request->validated();
+        $request->validated();
         $id = $request->qualification_id;
         $inputs = $request->all();
         Board::create($inputs);//追加
         return redirect()->route('board', [$id]);
     }
 }
+

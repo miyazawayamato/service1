@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class Board extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = ['qualification_id', 'name', 'message'];
     
     public function likes()
     {
