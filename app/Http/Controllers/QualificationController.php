@@ -16,4 +16,11 @@ class QualificationController extends Controller
         return view('qualis', ['qualis' => $qualis]);
     }
     
+    //
+    public function allfetch() {
+    
+        $qualis = Qualification::all();
+    
+        return $qualis;
+  }
 }
