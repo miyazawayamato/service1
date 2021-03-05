@@ -36,7 +36,7 @@ class ContactController extends Controller
             // メール送信
             //toに送信
             // Mail::to($input['email'])->send(new ContactMail($input));
-            Mail::to('official@dokusika.deca.jp')->send(new ContactMail($input));
+            Mail::to('official@dokusika.deca.jp')->bcc($request->email)->send(new ContactMail($input));
             $request->session()->regenerateToken();
             return view('trial');
         } else {
