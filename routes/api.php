@@ -18,4 +18,4 @@ use App\Http\Controllers\QualificationController;//資格一覧のコントロ�
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/api/allfetch',[QualificationController::class, 'allfetch']);
+Route::get('/api/allfetch',[QualificationController::class, 'allfetch'])->('apiall');
