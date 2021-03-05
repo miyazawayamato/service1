@@ -46,9 +46,9 @@ class ContactController extends Controller
         
         
         //再送信を防ぐためにトークンを再発行
-        $request->session()->regenerateToken();
+        //$request->session()->regenerateToken();
         //送信完了ページのviewを表示
-        return view('trial');
+        //return view('trial');
             
         
     }
