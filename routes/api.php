@@ -28,4 +28,4 @@ Route::get('/quali/{id}', function ($id) {
     return new QualificationResource(Qualification::findOrFail($id));
 })->name('quali');
 
-Route::post('/contact',[ContactController::class, 'send'])->name('api.contact');
+Route::post('/contact',[ContactController::class, 'end'])->name('api.contact');
