@@ -14,9 +14,6 @@
         <h4>メールアドレス</h4>
         <p>{{ $inputs['email'] }}</p>
         <input type="hidden" name="email" value="{{ $inputs['email'] }}">
-        <h4>種類</h4>
-        <p>{{ $inputs['select'] }}</p>
-        <input type="hidden" name="select" value="{{ $inputs['select'] }}">
         <h4>内容</h4>
         <p>{{ $inputs['body'] }}</p>
         <input type="hidden" name="body" value="{{ $inputs['body'] }}">
