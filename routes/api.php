@@ -25,3 +25,8 @@ Route::get('/allfetch',[QualificationController::class, 'allfetch'])->name('apia
 Route::get('/qualis', function () {
     return new QualificationResource(Qualification::all());
 })->name('qualis');
+
+
+Route::get('/qualis/{id}', function ($id) {
+    return new QualificationResource(Qualification::findOrFail($id));
+})->name('quali');
