@@ -9,13 +9,6 @@
     <form method="POST" action="{{ route('confirm') }}">
         @csrf
         
-        <p class="item">内容の種類</p>
-        <select class="btn select" name="select">
-            <option value="お問い合わせ">お問い合わせ</option>
-            <option value="ご意見">ご意見</option>
-            <option value="不備・エラー報告">不備・エラー報告</option>
-        </select>
-        
         <p class="item">メールアドレス</p>
         <input type="email" class="btn addres" placeholder="メールアドレス" value="{{ old('email') }}" name="email">
         @if ($errors->has('email'))
