@@ -52,4 +52,10 @@ class ContactController extends Controller
             
         
     }
+    //apiメールメソッド
+    public function apiSend(Contact $request) {
+        $validated = $request->validated();
+        Mail::to('official@dokusika.deca.jp')->bcc($request->email)->send(new ContactMail($request));
+        return true;
+    }
 }
