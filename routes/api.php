@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QualificationController;//資格一覧のコントローラー
+use App\Http\Resources\Qualification as QualificationResource;//リソースをリネーム
+use App\Models\Qualification;//資格一覧のモデル
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('/allfetch',[QualificationController::class, 'allfetch'])->name('apiall');
+
+Route::get('/qualis', function () {
+    return new QualificationResource(Qualification::all());
+})->name('qualis');
