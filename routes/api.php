@@ -17,16 +17,11 @@ use App\Models\Qualification;//資格一覧のモデル
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-Route::get('/allfetch',[QualificationController::class, 'allfetch'])->name('apiall');
-
 Route::get('/qualis', function () {
-    return new QualificationResource(Qualification::all());
+    return QualificationResource::collection(Qualification::all());
 })->name('qualis');
 
 
-Route::get('/qualis/{id}', function ($id) {
+Route::get('/quali/{id}', function ($id) {
     return new QualificationResource(Qualification::findOrFail($id));
 })->name('quali');
