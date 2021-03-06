@@ -15,8 +15,8 @@ class Qualification extends JsonResource
     public function toArray($request)
     {
           return [
+                'id' => $this->id,
                 'certificate' => $this->certificate,
-                'body' => $this->body,
                 'time' => $this->time,
                 'passrate' => $this->passrate,
                 'class' => $this->class,
