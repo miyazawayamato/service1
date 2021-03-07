@@ -55,8 +55,9 @@ class ContactController extends Controller
     //apiメールメソッド
     public function apiSend(Contact $request) {
         $validated = $request->validated();
-        $input  = $request->except('action');
-        Mail::to('official@dokusika.deca.jp')->bcc($request->email)->send(new ContactMail($input));
+        
+        return $request;
+        Mail::to('official@dokusika.deca.jp')->bcc($request->email)->send(new ContactMail($request));
         return true;
     }
 }
