@@ -35,7 +35,9 @@ class ContactMail extends Mailable
     public function build()
     {
         //fromから送信する この際のアドレスはどうでもいい
-        return $this->from('official@dokusika.deca.jp')
+        //メールアドレスは一時的に入れてない
+        //return $this->from('official@dokusika.deca.jp')
+        return $this->from('')
                     ->subject('お問い合わせメール')
                     ->view('emails.mail')
                     ->with([
